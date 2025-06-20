@@ -1,4 +1,4 @@
-import { About, Contact, Experience, FAQ, Footer, Hero, Navigation, Skills, WorksPage } from "@/components/components";
+import { Contact, Footer, Navigation } from "@/components/components";
 
 export default function Home() {
   return (

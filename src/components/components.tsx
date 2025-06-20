@@ -1,72 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronRight, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-// Tech Stack Carousel Component
-const TechStackCarousel = () => {
-    const [currentTechSlide, setCurrentTechSlide] = useState(0);
-
-    const techGroups = [
-        [
-            { name: "WordPress", color: "bg-blue-400", letter: "W" },
-            { name: "Vue.js", color: "bg-green-400", letter: "V" },
-            { name: "Angular", color: "bg-red-400", letter: "A" },
-            { name: "HTML5", color: "bg-orange-400", letter: "5" },
-            { name: "CSS3", color: "bg-blue-500", letter: "3" },
-            { name: "Sass", color: "bg-pink-400", letter: "S" },
-            { name: "Bootstrap", color: "bg-purple-400", letter: "B" },
-            { name: "MongoDB", color: "bg-green-600", letter: "M" }
-        ]
-    ];
-
-    // Auto-slide every 3 seconds
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTechSlide((prev) => (prev + 1) % techGroups.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
-    return (
-        <div className="mb-16">
-            <div className="overflow-hidden">
-                <motion.div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    animate={{ x: ["100%", "-100%"] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 15,
-                        ease: "linear",
-                    }}
-                >
-                    {techGroups.map((group, groupIndex) => (
-                        <div
-                            key={groupIndex}
-                            className="w-full flex-shrink-0 flex justify-center items-center space-x-8"
-                        >
-                            {group.map((tech, index) => (
-                                <motion.div
-                                    key={tech.name}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                                    className={`w-12 h-12 ${tech.color} rounded-lg flex items-center justify-center text-white font-bold hover:scale-110 transition-transform cursor-pointer tech-icon`}
-                                    title={tech.name}
-                                >
-                                    {tech.letter}
-                                </motion.div>
-                            ))}
-                        </div>
-                    ))}
-                </motion.div>
-            </div>
-        </div>
-    );
-};
 
 export default function Ticker() {
 
@@ -310,10 +248,12 @@ export const Hero = () => {
                     className="mb-8"
                 >
                     <div className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-blue-500/20 flex items-center justify-center overflow-hidden shadow-lg">
-                        <img
+                        <Image
                             src="https://framerusercontent.com/images/Y20gWtensfgJNfnHkj0qJKalXF0.jpg?scale-down-href=1024"
                             alt="Rozs Norbert"
                             className="w-full h-full"
+                            width={128}
+                            height={128}
                         />
                     </div>
                 </motion.div>
@@ -513,6 +453,7 @@ export const Skills = () => {
     React.useEffect(() => {
         const interval = setInterval(nextSlide, 4000);
         return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -710,6 +651,7 @@ export const Contact = () => {
         message: ""
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSubmit = (e: any) => {
         e.preventDefault();
         // Here you would typically send the form data to your backend
@@ -918,9 +860,11 @@ export const WorksPage = () => {
                             <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
                                 <div className="relative group">
                                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-2xl transform rotate-2 group-hover:rotate-1 transition-transform"></div>
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
+                                        width={800}
+                                        height={800}
                                         className="relative rounded-2xl w-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
                                     />
                                     <div className="absolute top-4 right-4 flex space-x-2">
