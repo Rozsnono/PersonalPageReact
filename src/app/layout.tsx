@@ -89,7 +89,17 @@ export const metadata: Metadata = {
     "fejlesztési kihívások",
     "online jelenlét",
     "karrier portfólió",
-    "IT portfólió"
+    "IT portfólió",
+    "Rozs Norbert vercel",
+    "Rozs Norbert Next.js",
+    "Rozs Norbert React",
+    "Rozs Norbert TypeScript",
+    "Rozs Norbert webfejlesztő",
+    "Rozs Norbert személyes portfólió",
+    "Rozs Norbert web programozó",
+    "Rozs Norbert fejlesztői portfólió",
+    "Norbert Rozs vercel",
+    "vercel"
   ]
 };
 

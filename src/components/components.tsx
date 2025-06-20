@@ -86,7 +86,7 @@ export default function Ticker() {
             >
 
                 <motion.div
-                    className="flex whitespace-nowrap"
+                    className="flex whitespace-nowrap min-w-full"
                     animate={{
                         x: ["100%", "-250%"],
                         transition: {
@@ -98,7 +98,6 @@ export default function Ticker() {
                             },
                         },
                     }}
-                    style={{ minWidth: "100%" }}
                 >
                     {[...Array(1)].map((_, i) => (
                         <div key={i} className="flex gap-16 px-4 text-white text-lg font-medium">
@@ -119,7 +118,7 @@ export default function Ticker() {
                     ))}
                 </motion.div>
                 <motion.div
-                    className="flex whitespace-nowrap absolute top-4"
+                    className="flex whitespace-nowrap absolute top-4 min-w-full"
                     animate={{
                         x: ["100%", "-250%"],
                         transition: {
@@ -131,7 +130,6 @@ export default function Ticker() {
                             },
                         },
                     }}
-                    style={{ minWidth: "100%" }}
                 >
                     {[...Array(1)].map((_, i) => (
                         <div key={i} className="flex gap-16 px-4 text-white text-lg font-medium">
@@ -291,7 +289,7 @@ export const Hero = () => {
                         href="/contact"
                         className="inline-flex items-center space-x-2 px-8 py-4 rounded-full text-lg font-semibold text-white relative z-10 hover:bg-blue-700 transition-all transform hover:scale-105"
                         style={{
-                            backgroundImage: "linear-gradient(270deg, #2563eb, #14b8a6, #2563eb)", // blue-600 → teal-500 → blue-600
+                            backgroundImage: "linear-gradient(270deg, #2563eb, #14b8a6, #2563eb)",
                             backgroundSize: "600% 600%",
                             backgroundPosition: "0% 50%",
                         }}
