@@ -110,7 +110,7 @@ export default function Ticker() {
                                         width={96}
                                         height={96}
                                         className="object-contain"
-                                        priority
+                                        loading="lazy"
                                     />
                                 ))
                             }
@@ -165,7 +165,7 @@ export const Navigation = () => {
         { name: "Work", path: "/works" },
         { name: "Experience", path: "/#experience" },
         { name: "FAQ", path: "/#faq" },
-        { name: "Proposal", path: "/proposal" },
+        { name: "Pricing", path: "/pricing" },
     ];
 
     return (
@@ -247,13 +247,13 @@ export const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-8"
                 >
-                    <div className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-blue-500/20 flex items-center justify-center overflow-hidden shadow-lg">
+                    <div className="w-44 h-44 rounded-full mx-auto mb-8 border-4 border-blue-500/20 flex items-center justify-center overflow-hidden shadow-lg">
                         <Image
                             src="/myself.jpg"
                             alt="Rozs Norbert"
                             className="w-full h-full"
-                            width={128}
-                            height={128}
+                            width={512}
+                            height={512}
                             priority
                         />
                     </div>
@@ -454,7 +454,7 @@ export const Skills = () => {
     React.useEffect(() => {
         const interval = setInterval(nextSlide, 4000);
         return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -489,7 +489,7 @@ export const Skills = () => {
                                                 whileInView={{ opacity: 1, scale: 1 }}
                                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                                 viewport={{ once: true }}
-                                                className={`border cursor-pointer hover:bg-gray-700 bg-gray-800 px-6 py-4 rounded-full text-white font-medium text-center hover:scale-105 transition-transform cursor-default shadow-lg`}
+                                                className={`border border-gray-500/50 cursor-pointer hover:bg-gray-700/50 bg-gray-800/40 px-6 py-4 rounded-3xl text-white font-medium text-center hover:scale-105 transition-transform cursor-default shadow-lg`}
                                             >
                                                 {skill.name}
                                             </motion.div>
@@ -549,7 +549,7 @@ export const Experience = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-colors"
+                            className="flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/30 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-colors"
                         >
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
@@ -578,7 +578,7 @@ export const FAQ = () => {
     const faqs = [
         {
             question: "How long does a project usually take?",
-            answer: "Project timelines vary depending on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 2-3 months. I always provide detailed timelines during the initial consultation."
+            answer: "The duration of a project depends on its complexity, but most projects are completed within 1 to 4 weeks. Simpler apps may take just a few days, while more complex systems might require more time for development and testing."
         },
         {
             question: "What technologies do I use for development?",
@@ -630,7 +630,7 @@ export const FAQ = () => {
                                         initial={{ opacity: 0, height: 0 }}
                                         animate={{ opacity: 1, height: "auto" }}
                                         exit={{ opacity: 0, height: 0 }}
-                                        className="px-6 pb-4 text-gray-400"
+                                        className="px-6 pb-4 text-gray-400 pt-4"
                                     >
                                         {faq.answer}
                                     </motion.div>
@@ -747,9 +747,9 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="py-12 px-4 backdrop-blur-md"> 
+        <footer className="py-12 px-4 backdrop-blur-md">
             <div className="max-w-6xl mx-auto">
-                <div className="flex flex-wrap justify-center items-center space-x-8 mb-8">
+                {/* <div className="flex flex-wrap justify-center items-center space-x-8 mb-8">
                     {techIcons.map((tech, index) => (
                         <div
                             key={index}
@@ -758,14 +758,14 @@ export const Footer = () => {
                             {tech.name.charAt(0)}
                         </div>
                     ))}
-                </div>
+                </div> */}
 
-                <div className="text-center text-gray-400">
-                    <p>&copy; 2024 Rozs Norbert. All rights reserved.</p>
+                <div className="text-center text-gray-400 flex justify-between items-center">
+                    <p>&copy; 2025 Rozs Norbert. All rights reserved.</p>
                     <div className="flex justify-center space-x-6 mt-4">
-                        <Link href="/" className="hover:text-blue-400 transition-colors">LinkedIn</Link>
-                        <Link href="/" className="hover:text-blue-400 transition-colors">GitHub</Link>
-                        <Link href="/" className="hover:text-blue-400 transition-colors">Website</Link>
+                        <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
+                        <Link href="https://github.com/Rozsnono" className="hover:text-sky-200 transition-colors">GitHub</Link>
+                        <Link href="mailto:rozsnono@gmail.com" className="hover:text-sky-200 transition-colors">Mail</Link>
                     </div>
                 </div>
             </div>
@@ -878,6 +878,440 @@ export const WorksPage = () => {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export const Prices = () => {
+    const services = [
+        {
+            title: "Basic Website",
+            price: "€?,???",
+            description: "Perfect for small businesses and personal portfolios",
+            features: [
+                "Responsive Design",
+                "Up to 5 Pages",
+                "Contact Form",
+                "Basic SEO",
+                "Mobile Optimization",
+                "3 Months Support"
+            ],
+            popular: false
+        },
+        {
+            title: "Advanced Web App",
+            price: "€?,???",
+            description: "Full-featured web applications with custom functionality",
+            features: [
+                "Custom Development",
+                "Database Integration",
+                "User Authentication",
+                "Admin Dashboard",
+                "API Integration",
+                "6 Months Support",
+                "Performance Optimization"
+            ],
+            popular: true
+        },
+        {
+            title: "Enterprise Solution",
+            price: "€?,???",
+            description: "Large-scale applications with complex requirements",
+            features: [
+                "Scalable Architecture",
+                "Microservices",
+                "Cloud Deployment",
+                "Advanced Security",
+                "Load Balancing",
+                "12 Months Support",
+                "Team Training",
+                "Documentation"
+            ],
+            popular: false
+        }
+    ];
+
+    const additionalServices = [
+        {
+            service: "Website Maintenance",
+            price: "€???/month"
+        },
+        {
+            service: "Performance Optimization",
+            price: "€???"
+        },
+        {
+            service: "SEO Optimization",
+            price: "€???"
+        },
+        {
+            service: "Security Audit",
+            price: "€???"
+        }
+    ];
+
+    return (
+        <div className="text-white min-h-screen pt-16">
+            <div className="max-w-6xl mx-auto px-6 py-20">
+                <div className="text-center mb-16">
+                    <h1 className="text-5xl font-bold mb-6">Pricing & Services</h1>
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Transparent pricing for quality web development services.
+                        Choose the package that best fits your project needs.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                    {services.map((service, index) => (
+                        <div
+                            key={index}
+                            className={`relative bg-gray-800 rounded-lg p-8 shadow-xl hover:ring-2 cursor-pointer hover:ring-sky-600 duration-200 hover:scale-105 ${service.popular ? 'ring-2 ring-blue-600 transform scale-105' : ''
+                                }`}
+                        >
+                            {service.popular && (
+                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                        Most Popular
+                                    </span>
+                                </div>
+                            )}
+
+                            <div className="text-center mb-8">
+                                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                                <div className="text-4xl font-bold text-blue-400 mb-4">{service.price}</div>
+                                <p className="text-gray-400">{service.description}</p>
+                            </div>
+
+                            <ul className="space-y-4 mb-8">
+                                {service.features.map((feature, featureIndex) => (
+                                    <li key={featureIndex} className="flex items-center">
+                                        <svg className="w-5 h-5 text-blue-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                        </svg>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Link
+                                href="/contact"
+                                className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors ${service.popular
+                                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                                    : 'border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white'
+                                    }`}
+                            >
+                                Get Started
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Additional Services */}
+                <div className="mt-20 text-center">
+                    <h2 className="text-3xl font-bold mb-8">Additional Services</h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {additionalServices.map((item, index) => (
+                            <div key={index} className="bg-gray-800 p-6 rounded-lg">
+                                <h4 className="font-semibold mb-2">{item.service}</h4>
+                                <div className="text-blue-400 font-bold">{item.price}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <p className="italic text-gray-400 mt-8 text-center md:text-lg text-xs">
+                    <span className="text-blue-400 font-semibold">Note:</span> All prices are estimates and may vary based on project complexity and requirements. Contact me for a detailed quote tailored to your specific needs. Upfront payment is required to start the project, with a <b>25%</b> deposit and the remaining balance due upon completion.
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export const TimeLine = () => {
+    return (
+        <div className="p-8">
+            <div className="max-w-6xl mx-auto">
+                {/* Timeline Title */}
+                <h1 className="text-white text-3xl font-bold mb-8 mb-12 text-center w-full">Timeline</h1>
+
+                {/* Timeline Container */}
+                <div className="hidden md:block relative bg-linear-to-b from-gray-800/50 to-transparent rounded-t-4xl p-8 ">
+                    {/* Week Headers */}
+                    <div className="grid grid-cols-4 gap-4 mb-8">
+                        <div className="text-white text-lg font-medium text-center">Week 1</div>
+                        <div className="text-white text-lg font-medium text-center">Week 2</div>
+                        <div className="text-white text-lg font-medium text-center">Week 3</div>
+                        <div className="text-white text-lg font-medium text-center">Week 4</div>
+                    </div>
+
+                    {/* Timeline Grid */}
+                    <div className="grid grid-cols-4 gap-4 relative min-h-[300px]">
+                        {/* Week Columns Background */}
+                        <div className="border-r border-gray-700 opacity-50"></div>
+                        <div className="border-r border-gray-700 opacity-50"></div>
+                        <div className="border-r border-gray-700 opacity-50"></div>
+                        <div></div>
+
+                        {/* Design Phase - Week 1 */}
+                        <div className="absolute left-0 top-8 w-1/4 pr-2">
+                            <div className="bg-purple-800/50 hover:bg-purple-800/80 ring-2 ring-purple-600 transition-colors duration-300 rounded-full px-6 py-4 text-white text-center font-medium shadow-lg">
+                                Design Phase
+                            </div>
+                        </div>
+
+                        {/* Development Phase - Week 2-3 */}
+                        <div className="absolute left-1/4 top-20 w-2/4 px-2">
+                            <div className="bg-amber-800/50 hover:bg-amber-700/60 ring-2 ring-amber-600 transition-colors duration-300 rounded-full px-8 py-4 text-white text-center font-medium shadow-lg">
+                                Development Phase
+                            </div>
+                        </div>
+
+                        {/* QA & Testing Phase - Week 4 */}
+                        <div className="absolute right-0 top-32 w-1/4 pl-2">
+                            <div className="bg-green-800/50 hover:bg-green-800/80 ring-2 ring-green-600 transition-colors duration-300 rounded-full px-6 py-4 text-white text-center font-medium shadow-lg">
+                                QA & Testing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile Timeline */}
+                <div className="md:hidden">
+                    <div className="space-y-4">
+                        {/* Design Phase */}
+                        <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
+                            <h1 className="text-white text-lg font-medium text-center">Week 1 - 2</h1>
+                            <div className="bg-purple-800/50 hover:bg-purple-800/80 ring-4 ring-purple-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
+                                Design Phase
+                            </div>
+                        </div>
+
+                        {/* Development Phase */}
+                        <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
+                            <h1 className="text-white text-lg font-medium text-center">Week 2 - 3</h1>
+                            <div className="bg-amber-800/50 hover:bg-amber-700/60 ring-4 ring-amber-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
+                                Development Phase
+                            </div>
+                        </div>
+
+                        {/* QA & Testing Phase */}
+                        <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
+                            <h1 className="text-white text-lg font-medium text-center">Week 4</h1>
+                            <div className="bg-green-800/50 hover:bg-green-800/80 ring-4 ring-green-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
+                                QA & Testing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p className="italic text-gray-400 mt-8 text-center md:text-lg text-xs">
+                    <span className="text-blue-400 font-semibold">Note:</span> This timeline is a general guideline and may vary based on project complexity and requirements. Each phase includes regular updates and client feedback sessions to ensure alignment with your vision.
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export const PricingFooter = () => {
+    return (
+        <div className="mt-20 text-center">
+
+            <p className="text-lg text-gray-400 mb-8">
+                If you have any questions or need a custom quote, feel free to reach out.
+            </p>
+            <h2 className="text-3xl font-bold mb-8">
+                Looking forward to working together!
+            </h2>
+            <h4 className="text-xl font-bold">Best regards,</h4>
+            <h3 className="text-5xl handwritten text-gray-100">Rozs Norbert</h3>
+        </div>
+    );
+}
+
+export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        projectType: '',
+        message: ''
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleInputChange = (e: any) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        // Simulate form submission
+        setTimeout(() => {
+            setSubmitMessage('Thank you! We\'ll get back to you soon about your website project.');
+            setIsSubmitting(false);
+            setFormData({ name: '', email: '', projectType: '', message: '' });
+        }, 1000);
+    };
+
+    return (
+        <div className="py-32 px-4">
+            <div className="max-w-2xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mb-12 text-center"
+                >
+                    {
+                        contactPage ?
+                            <React.Fragment>
+                                {/* Form Title */}
+                                <h1 className="text-white text-3xl font-light mb-4 text-center font-mono">Get Your Website Built</h1>
+                                <p className="text-gray-400 text-center mb-12">Tell me about your project and I will help bring your vision to life</p>
+                            </React.Fragment> :
+                            <React.Fragment>
+                                {/* Form Title */}
+                                <h1 className="text-white text-5xl font-light mb-8 text-center font-mono">Contact Me</h1>
+                            </React.Fragment>
+                    }
+                </motion.div>
+                {/* Contact Form */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-900/50 rounded-2xl p-8 shadow-2xl border border-gray-800"
+                >
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Name Input */}
+                        <div>
+                            <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
+                                Full Name *
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                required
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Enter your full name"
+                            />
+                        </div>
+
+                        {/* Email Input */}
+                        <div>
+                            <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
+                                Email Address *
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="your.email@example.com"
+                            />
+                        </div>
+
+                        {/* Project Type Select */}
+                        <div>
+                            <label htmlFor="projectType" className="block text-white text-sm font-medium mb-2">
+                                Project Type *
+                            </label>
+                            <select
+                                id="projectType"
+                                name="projectType"
+                                value={formData.projectType}
+                                onChange={handleInputChange}
+                                required
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            >
+                                <option value="">Select your project type</option>
+                                <option value="portfolio">Portfolio Website</option>
+                                <option value="business">Business/Corporate Website</option>
+                                <option value="ecommerce">E-commerce Store</option>
+                                <option value="blog">Blog/Content Website</option>
+                                <option value="landing">Landing Page</option>
+                                <option value="webapp">Web Application</option>
+                                <option value="redesign">Website Redesign</option>
+                                <option value="other">Other (Please specify in message)</option>
+                            </select>
+                        </div>
+
+                        {/* Message Textarea */}
+                        <div>
+                            <label htmlFor="message" className="block text-white text-sm font-medium mb-2">
+                                Project Description *
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                required
+                                rows={5}
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical"
+                                placeholder="Tell us about your website project... What's your vision? What features do you need? Any specific requirements or preferences?"
+                            ></textarea>
+                        </div>
+
+                        {/* Submit Button */}
+                        <div className="pt-4">
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full cursor-pointer bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-600 disabled:to-gray-700 text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed shadow-lg"
+                            >
+                                {isSubmitting ? (
+                                    <div className="flex items-center justify-center">
+                                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                                        Sending...
+                                    </div>
+                                ) : (
+                                    'Send Project Request'
+                                )}
+                            </button>
+                        </div>
+
+                        {/* Success Message */}
+                        {submitMessage && (
+                            <div className="bg-green-900 border border-green-700 text-green-300 px-4 py-3 rounded-lg text-center">
+                                {submitMessage}
+                            </div>
+                        )}
+                    </form>
+                </motion.div>
+
+
+                {/* Additional Info */}
+                <div className="mt-8 text-center">
+                    <p className="text-gray-400 text-sm">
+                        We typically respond within 24 hours • Free consultation included
+                    </p>
+                    <p className="text-gray-400 text-xs mt-2 italic">
+                        Please do not submit spam or unsolicited offers. This form is for genuine project inquiries only.
+                    </p>
+                    {/* <div className="mt-4">
+                        <p className="text-gray-400 text-sm">
+                            By submitting this form, you agree to our <Link href="/privacy-policy" className="text-blue-400 hover:underline">Privacy Policy</Link>.
+                        </p>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import Ticker, { About, Contact, Experience, FAQ, Footer, Hero, Navigation, Skills } from "@/components/components";
+import Ticker, { About, ContactForm, Experience, FAQ, Footer, Hero, Navigation, Skills } from "@/components/components";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <FAQ />
-        <Contact />
+        <ContactForm />
         <Footer />
       </>
     </div>
