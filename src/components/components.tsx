@@ -249,7 +249,7 @@ export const Hero = () => {
                 >
                     <div className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-blue-500/20 flex items-center justify-center overflow-hidden shadow-lg">
                         <Image
-                            src="/myself.png"
+                            src="/myself.jpg"
                             alt="Rozs Norbert"
                             className="w-full h-full"
                             width={128}
@@ -780,28 +780,28 @@ export const WorksPage = () => {
         {
             title: "PlanIt - The Card game",
             description: "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
-            image: "/logo/react.png",
+            image: "/logos/react.png",
             status: "Coming Soon",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
             title: "Study Assistant Application",
             description: "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",
-            image: "/logo/next.png",
+            image: "/logos/next.png",
             status: "See for yourself",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
             title: "CoinCash",
             description: "A user-friendly platform for buying cryptocurrencies and tracking their price in real-time. Stay informed about the market, manage your digital investments effortlessly, all in one place.",
-            image: "/logo/angular.png",
+            image: "/logos/angular.png",
             status: "See for yourself",
             technologies: ["Angular", "Node.js", "PHP", "Python", "MySQL"]
         },
         {
             title: "BlueCard",
             description: "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
-            image: "/logo/mongo.png",
+            image: "/logos/mongo.png",
             status: "Coming Soon",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         }
