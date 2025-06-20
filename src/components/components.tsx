@@ -111,6 +111,7 @@ export default function Ticker() {
                                         width={96}
                                         height={96}
                                         className="object-contain"
+                                        priority
                                     />
                                 ))
                             }
@@ -143,6 +144,7 @@ export default function Ticker() {
                                         width={96}
                                         height={96}
                                         className="object-contain"
+                                        priority
                                     />
                                 ))
                             }
@@ -174,7 +176,7 @@ export const Navigation = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2">
-                        <Image src={"/logo.png"} width={48} height={48} alt="Logo"></Image>
+                        <Image src={"/logo.png"} width={48} height={48} alt="Logo" priority></Image>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -254,6 +256,7 @@ export const Hero = () => {
                             className="w-full h-full"
                             width={128}
                             height={128}
+                            priority
                         />
                     </div>
                 </motion.div>
@@ -865,6 +868,7 @@ export const WorksPage = () => {
                                         alt={project.title}
                                         width={800}
                                         height={800}
+                                        priority
                                         className="relative rounded-2xl w-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
                                     />
                                     <div className="absolute top-4 right-4 flex space-x-2">
