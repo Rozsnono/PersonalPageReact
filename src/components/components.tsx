@@ -801,7 +801,7 @@ export const WorksPage = () => {
         {
             title: "BlueCard",
             description: "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
-            image: "/logos/mongo.png",
+            image: "/logos/vue.png",
             status: "Coming Soon",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         }
