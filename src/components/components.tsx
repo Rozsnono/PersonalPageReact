@@ -781,28 +781,28 @@ export const WorksPage = () => {
         {
             title: "PlanIt - The Card game",
             description: "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
-            image: "/logos/react.png",
+            image: "/works/planit.png",
             status: "Coming Soon",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
             title: "Study Assistant Application",
             description: "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",
-            image: "/logos/next.png",
+            image: "/works/tanulas.png",
             status: "See for yourself",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
             title: "CoinCash",
             description: "A user-friendly platform for buying cryptocurrencies and tracking their price in real-time. Stay informed about the market, manage your digital investments effortlessly, all in one place.",
-            image: "/logos/angular.png",
+            image: "/works/coincash.png",
             status: "See for yourself",
             technologies: ["Angular", "Node.js", "PHP", "Python", "MySQL"]
         },
         {
             title: "BlueCard",
             description: "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
-            image: "/logos/vue.png",
+            image: "/works/bluecard.png",
             status: "Coming Soon",
             technologies: ["Next.js", "Node.js", "MongoDB"]
         }
@@ -864,8 +864,8 @@ export const WorksPage = () => {
                                     <Image
                                         src={project.image}
                                         alt={project.title}
-                                        width={800}
-                                        height={800}
+                                        width={600}
+                                        height={600}
                                         priority
                                         className="relative rounded-2xl w-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
                                     />
