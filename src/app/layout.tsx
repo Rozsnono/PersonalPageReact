@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rozs Norbert - Web Developer",
-  description: "Tailor-made websites. Premium quality",
+  description: "Tailor-made websites crafted with precision and creativity. Premium quality design, fast performance, and modern code for your business success.",
   openGraph: {
     title: "Rozs Norbert - Web Developer",
-    description: "Tailor-made websites. Premium quality",
+    description: "Tailor-made websites crafted with precision and creativity. Premium quality design, fast performance, and modern code for your business success.",
     url: "https://rozs-norbert.vercel.app",
     siteName: "Rozs Norbert - Web Developer",
     images: [
@@ -99,7 +99,18 @@ export const metadata: Metadata = {
     "Rozs Norbert web programozó",
     "Rozs Norbert fejlesztői portfólió",
     "Norbert Rozs vercel",
-    "vercel"
+    "vercel",
+    "development",
+    "frontend",
+    "frontend development",
+    "backend",
+    "backend development",
+    "fullstack",
+    "fullstack development",
+    "web development",
+    "web developer",
+    "design",
+    "web design",
   ]
 };
 
