@@ -738,7 +738,7 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="py-12 px-4 backdrop-blur-md">
+        <footer className="py-12 px-4 ">
             <div className="max-w-6xl mx-auto">
                 {/* <div className="flex flex-wrap justify-center items-center space-x-8 mb-8">
                     {techIcons.map((tech, index) => (
@@ -774,6 +774,7 @@ export const WorksPage = () => {
             description: "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
             image: "/works/planit.png",
             status: "Coming Soon",
+            link: null,
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
@@ -781,6 +782,7 @@ export const WorksPage = () => {
             description: "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",
             image: "/works/tanulas.png",
             status: "See for yourself",
+            link: 'https://tanulas.netlify.app',
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
@@ -788,6 +790,7 @@ export const WorksPage = () => {
             description: "A user-friendly platform for buying cryptocurrencies and tracking their price in real-time. Stay informed about the market, manage your digital investments effortlessly, all in one place.",
             image: "/works/coincash.png",
             status: "See for yourself",
+            link: 'https://coincash.eu',
             technologies: ["Angular", "Node.js", "PHP", "Python", "MySQL"]
         },
         {
@@ -795,6 +798,7 @@ export const WorksPage = () => {
             description: "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
             image: "/works/bluecard.png",
             status: "Coming Soon",
+            link: null,
             technologies: ["Next.js", "Node.js", "MongoDB"]
         }
     ];
@@ -841,9 +845,14 @@ export const WorksPage = () => {
                                 <button
                                     className={`px-6 py-3 rounded-lg font-medium transition-all ${project.status === "Coming Soon"
                                         ? "bg-gray-700 text-gray-400 cursor-not-allowed"
-                                        : "bg-blue-600 hover:bg-blue-700 text-white hover:scale-105"
+                                        : "bg-blue-600 hover:bg-blue-700 text-white hover:scale-105 cursor-pointer"
                                         }`}
                                     disabled={project.status === "Coming Soon"}
+                                    onClick={() => {
+                                        if (project.link) {
+                                            window.open(project.link, "_blank");
+                                        }
+                                    }}
                                 >
                                     {project.status}
                                 </button>
