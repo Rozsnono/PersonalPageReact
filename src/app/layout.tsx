@@ -143,6 +143,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
+        <link rel="canonical" href="https://rozsnorbert.vercel.app" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
