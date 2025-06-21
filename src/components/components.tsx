@@ -552,6 +552,68 @@ export const Experience = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             viewport={{ once: true }}
+                            className="flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/30 rounded-2xl border border-gray-700 hover:border-emerald-500/50 transition-colors"
+                        >
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
+                                <p className="text-emerald-400">{exp.company}</p>
+                            </div>
+                            <div className="mt-4 md:mt-0 text-right">
+                                <p className="text-gray-400">{exp.duration}</p>
+                                {exp.current && (
+                                    <span className="inline-block mt-2 px-3 py-1 bg-green-600 text-xs rounded-full">
+                                        {t('current')}
+                                    </span>
+                                )}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// Studies Component
+export const Studies = () => {
+    const t = useTranslations('studies');
+
+    const experiences = [
+        {
+            title: t('sze'),
+            company: "Győri Széchenyi István Egyetem",
+            duration: "Sep 2022 - Feb 2026",
+            current: new Date().getFullYear() < 2026
+        },
+        {
+            title: t('jedlik'),
+            company: "Győri SZC Jedlik Ányos Gépipari és Informatikai Technikum és Kollégium",
+            duration: "Sep 2017 - Jun 2022",
+            current: false
+        }
+    ];
+
+    return (
+        <section className="py-20 px-4" id="experience">
+            <div className="max-w-4xl mx-auto">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-4xl font-bold mb-16 text-center"
+                >
+                    {t('title')}
+                </motion.h2>
+
+                <div className="space-y-8">
+                    {experiences.map((exp, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: index * 0.2 }}
+                            viewport={{ once: true }}
                             className="flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/30 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-colors"
                         >
                             <div>
@@ -561,7 +623,7 @@ export const Experience = () => {
                             <div className="mt-4 md:mt-0 text-right">
                                 <p className="text-gray-400">{exp.duration}</p>
                                 {exp.current && (
-                                    <span className="inline-block mt-2 px-3 py-1 bg-green-600 text-xs rounded-full">
+                                    <span className="inline-block mt-2 px-3 py-1 bg-sky-600 text-xs rounded-full">
                                         {t('current')}
                                     </span>
                                 )}

@@ -39,6 +39,12 @@
         "current": "Current",
         "present": "Present"
     },
+    "studies": {
+        "title": "Education",
+        "current": "Current",
+        "sze": "Computer Engineering",
+        "jedlik": "Software Developer and Tester"
+    },
     "faq": {
         "title": "Frequently Asked Questions",
         "question1": "How long does a project usually take?",

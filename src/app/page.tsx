@@ -1,4 +1,4 @@
-import { About, ContactForm, Experience, FAQ, Footer, Hero, LanguageSelector, Navigation, Skills, Ticker } from "@/components/components";
+import { About, ContactForm, Experience, FAQ, Footer, Hero, LanguageSelector, Navigation, Skills, Studies, Ticker } from "@/components/components";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <Ticker />
         <Skills />
         <Experience />
+        <Studies />
         <FAQ />
         <ContactForm />
         <Footer />

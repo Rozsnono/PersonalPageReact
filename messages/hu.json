@@ -39,6 +39,12 @@
         "current": "Jelenleg is",
         "present": "Jelenleg"
     },
+    "studies": {
+        "title": "Tanulmányok",
+        "current": "Jelenleg is",
+        "sze": "Mérnökinformatikus",
+        "jedlik": "Szoftverfejlesztő és tesztelő"
+    },
     "faq": {
         "title": "Gyakran Ismételt Kérdések",
         "question1": "Mennyi ideig tart általában egy projekt?",
