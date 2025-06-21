@@ -888,22 +888,39 @@ export const Prices = () => {
     const services = [
         {
             title: "Basic Website",
-            price: "€799",
+            price: "€499",
             description: "Perfect for small businesses and personal portfolios",
             features: [
                 "Responsive Design",
-                "Up to 3 Pages",
+                "Home + 404 Page",
                 "Contact Form",
                 "Basic SEO",
                 "Mobile Optimization",
                 "3 Months Support",
+                "3 Revisions",
             ],
             popular: false
         },
         {
             title: "Advanced Web App",
-            price: "€1,499",
+            price: "€1,099",
             description: "Full-featured web applications with custom functionality",
+            features: [
+                "Responsive Design",
+                "Up to 5 Pages",
+                "Advanced SEO",
+                "Mobile Optimization",
+                "Performance Optimization",
+                "6 Months Support",
+                "8 Revisions",
+            ],
+            note: "Everything is included from the Basic Website package",
+            popular: true
+        },
+        {
+            title: "Custom Solution",
+            price: "€?,???",
+            description: "Large-scale applications with complex requirements",
             features: [
                 "Custom Development",
                 "Database Integration",
@@ -915,44 +932,28 @@ export const Prices = () => {
                 "Performance Optimization",
                 "5 Revisions",
             ],
-            note: "Everything is included from the Basic Website package",
-            popular: true
-        },
-        {
-            title: "Enterprise Solution",
-            price: "€?,???",
-            description: "Large-scale applications with complex requirements",
-            features: [
-                "Scalable Architecture",
-                "Microservices",
-                "Cloud Deployment",
-                "Advanced Security",
-                "Load Balancing",
-                "12 Months Support",
-                "Team Training",
-                "Documentation"
-            ],
-            popular: false
+            popular: false,
+            note: "Everything is included from the Advanced Website package",
         }
     ];
 
     const additionalServices = [
         {
             service: "Website Maintenance",
-            price: "€???/month"
+            price: "€50/month"
         },
         {
-            service: "Performance Optimization",
-            price: "€???"
+            service: "Extra Page",
+            price: "€30/page"
         },
         {
-            service: "SEO Optimization",
-            price: "€???"
+            service: "Domain administration",
+            price: "€50"
         },
         {
-            service: "Security Audit",
-            price: "€???"
-        }
+            service: "Existing website redesign",
+            price: "€500"
+        },
     ];
 
     return (
