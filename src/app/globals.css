@@ -179,3 +179,19 @@ img[loading] {
   transform: translateY(-10px);
   transition: all 0.2s ease;
 }
+
+i[class*="icon"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+i.icon.hu {
+  background-image: url('/flags/hu.png');
+}
+
+i.icon.en {
+  background-image: url('/flags/en.png');
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Freehand } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
+import { CookieBanner, LanguageSelector } from "@/components/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -155,6 +156,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} antialiased`}
       >
         {children}
+        <LanguageSelector />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ChevronUp, Globe, Cookie as CookieIcon } from "lucide-react";
 import Link from "next/link";
+import Cookie from 'js-cookie';
 import { usePathname } from "next/navigation";
 
 export const Ticker = () => {
@@ -1329,3 +1330,116 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
         </div>
     );
 };
+
+export const LanguageSelector = () => {
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
+    const [isOpen, setIsOpen] = useState(false);
+
+    const languages = [
+        { code: 'en', label: 'English' },
+        { code: 'hu', label: 'Magyar' },
+        // Add more if needed
+    ];
+
+    const handleLanguageChange = (lang: string) => {
+        setSelectedLanguage(lang);
+        setIsOpen(false);
+        // Example: i18n.changeLanguage(lang);
+    };
+
+    return (
+        <motion.div
+            className="fixed bottom-4 left-4 z-50"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+        >
+            <div className="relative">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    onBlur={() => setIsOpen(false)}
+                    className="w-12 h-12 rounded-full bg-gray-900/50 backdrop-blur-md border border-gray-700 flex justify-center items-center hover:bg-gray-800/70 transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                >
+                    <i className={`icon ${selectedLanguage}`}></i>
+                </button>
+
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.ul
+                            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                            className="absolute left-0 bottom-14 mt-2 w-40 rounded-xl bg-gray-800 text-white shadow-xl ring-1 ring-gray-700 overflow-hidden"
+                        >
+                            {languages.map(({ code, label }) => (
+                                <li key={code}>
+                                    <button
+                                        onClick={() => handleLanguageChange(code)}
+                                        className={`w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-700 transition-colors duration-200 ${selectedLanguage === code ? 'bg-gray-700 font-semibold' : 'cursor-pointer'
+                                            }`}
+                                    >
+                                        <i className={`icon ${code}`}></i>{label}
+                                    </button>
+                                </li>
+                            ))}
+                        </motion.ul>
+                    )}
+                </AnimatePresence>
+            </div>
+        </motion.div>
+    );
+};
+
+export const CookieBanner = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const hasConsented = Cookie.get('cookie_consent');
+        if (!hasConsented) {
+            setIsVisible(true);
+        }
+    }, []);
+
+    const acceptCookies = () => {
+        Cookie.set('cookie_consent', 'true', { expires: 365 });
+        setIsVisible(false);
+    };
+
+    if (!isVisible) return null;
+
+    return (
+        <motion.div
+            className="md:bottom-6 bottom-3 md:right-6 fixed z-50 max-w-md bg-gray-900/80"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+        >
+            <div className="p-4 rounded-lg shadow-lg backdrop-blur-md border border-gray-700">
+                <div className="flex justify-between flex-col gap-4">
+                    <h3 className="flex items-center gap-2 text-white">
+                        <CookieIcon />
+                        <span className="text-lg font-semibold text-white"> Cookie Consent</span>
+                    </h3>
+                    <p className="text-gray-300 text-md">
+                        This website uses cookies to enhance your experience. By continuing to visit this site, you agree to my use of cookies.
+                    </p>
+                    <p className="text-gray-400 text-xs">
+                        For more information, please read my <a href="#" className="text-blue-400 hover:underline">Privacy Policy</a>.
+                    </p>
+                    <div className="flex gap-2 w-full">
+                        <button
+                            onClick={acceptCookies}
+                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm transition-colors duration-300 w-full cursor-pointer"
+                        >
+                            Accept
+                        </button>
+                        <button
+                            onClick={() => setIsVisible(false)}
+                            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors duration-300 w-full cursor-pointer"
+                        >
+                            Decline
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
