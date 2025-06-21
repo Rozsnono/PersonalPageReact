@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Freehand } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { CookieBanner, LanguageSelector } from "@/components/components";
 
 const geistSans = Geist({
@@ -138,13 +140,15 @@ const schemaData = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
@@ -155,9 +159,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} antialiased`}
       >
-        {children}
-        <LanguageSelector />
-        <CookieBanner />
+        <NextIntlClientProvider>
+          {children}
+          <LanguageSelector />
+          <CookieBanner />
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>

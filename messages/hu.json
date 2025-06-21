@@ -1,0 +1,84 @@
+{
+    "nav": {
+        "works": "Munkáim",
+        "about": "Rólam",
+        "experience": "Tapasztalat",
+        "faq": "GYIK",
+        "pricing": "Árak",
+        "contact": "Kapcsolatfelvétel"
+    },
+    "hero": {
+        "title": "Egyedi weboldalak.",
+        "subtitle": "Prémium minőség",
+        "description": "Tapasztalt webfejlesztő, erős háttérrel egyedi megoldások készítésében.",
+        "contact": "Lépj kapcsolatba",
+        "works": "Nézd meg a munkáimat"
+    },
+    "about": {
+        "text1": "Webdesigner és szakértő a",
+        "highlight1": "webfejlesztésben",
+        "text2": "több mint",
+        "highlight2": "5 év",
+        "text3": "iparági tapasztalattal.",
+        "text4": "Szakértelme kiterjed a",
+        "highlight3": "frontend fejlesztésre",
+        "text5": "és a",
+        "highlight4": "backend fejlesztésre",
+        "text6": "is, mindkettő hatékony és könnyen karbantartható."
+    },
+    "skills": {
+        "title": "Készségek",
+        "frontend": "Frontend fejlesztés",
+        "backend": "Backend fejlesztés"
+    },
+    "experience": {
+        "title": "Tapasztalat",
+        "tiwala": "Frontend fejlesztő",
+        "integrity": "Full-stack fejlesztő",
+        "freelance": "Webfejlesztő",
+        "current": "Jelenleg is",
+        "present": "Jelenleg"
+    },
+    "faq": {
+        "title": "Gyakran Ismételt Kérdések",
+        "question1": "Mennyi ideig tart általában egy projekt?",
+        "answer1": "A projekt időtartama a bonyolultságától függ, de a legtöbb projekt 1–4 héten belül elkészül. Egyszerűbb alkalmazások néhány nap alatt elkészülhetnek, míg összetettebb rendszerek több időt igényelhetnek a fejlesztéshez és teszteléshez.",
+        "question2": "Milyen technológiákat használok a fejlesztéshez?",
+        "answer2": "Modern webes technológiákra specializálódom, mint például React, Next.js, Vue.js, Angular a frontend fejlesztéshez, és Node.js, C# a backend fejlesztéshez. Emellett különféle adatbázisokkal is dolgozom, például MongoDB és MySQL.",
+        "question3": "Mennyi az átlagos projektköltség?",
+        "answer3": "A projekt költsége a bonyolultságtól, funkcióktól és határidőtől függ. Egyedi árajánlatot adok az igényeid alapján. Kérlek, lépj kapcsolatba velem részletes ajánlatért és átlátható árképzésért."
+    },
+    "contact": {
+        "title": "Lépj kapcsolatba velem",
+        "bigTitle": "Építsük meg a weboldalad",
+        "bigSubtitle": "Mesélj a projektedről, és segítek életre kelteni a víziódat",
+        "form": {
+            "name": "Teljes név",
+            "placeholderName": "Add meg a teljes neved",
+            "email": "E-mail cím",
+            "placeholderEmail": "Add meg az e-mail címed",
+            "type": "Projekt típusa",
+            "placeholderType": "Válassz projekt típust",
+            "websiteTypes": {
+                "portfolio": "Portfólió weboldal",
+                "business": "Üzleti/Vállalati weboldal",
+                "ecommerce": "Webáruház",
+                "blog": "Blog/Tartalmi weboldal",
+                "landing": "Landing oldal",
+                "webapp": "Webalkalmazás",
+                "redesign": "Weboldal újratervezés",
+                "other": "Egyéb (kérlek, írd meg az üzenetben)"
+            },
+            "description": "Projekt leírása",
+            "placeholderDescription": "Mesélj a weboldal projektedről... Mi a víziód? Milyen funkciókra van szükséged? Vannak különleges igényeid vagy preferenciáid?",
+            "submit": "Projektkérés elküldése",
+            "sending": "Küldés folyamatban...",
+            "success": "Köszönjük! Hamarosan felveszem veled a kapcsolatot a weboldal projekteddel kapcsolatban."
+        },
+        "response": "Általában 24 órán belül válaszolok • Ingyenes konzultációt is biztosítok",
+        "spam": "Kérjük, ne küldj spameket vagy kéretlen ajánlatokat. Ez az űrlap kizárólag valódi projektmegkeresésekre szolgál."
+    },
+    "footer": {
+        "copyright": "Minden jog fenntartva"
+    }
+}

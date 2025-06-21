@@ -6,6 +6,9 @@ import { ChevronRight, ChevronDown, ChevronUp, Globe, Cookie as CookieIcon } fro
 import Link from "next/link";
 import Cookie from 'js-cookie';
 import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from 'next-intl';
+import { Locale } from '@/i18n/config';
+import { setUserLocale } from '../app/services/locale';
 
 export const Ticker = () => {
 
@@ -111,37 +114,37 @@ export const Ticker = () => {
                 </div>
 
                 {/* <motion.div
-                    className="flex whitespace-nowrap min-w-full"
-                    animate={{
-                        x: ["100%", "-250%"],
-                        transition: {
-                            x: {
-                                duration: 40,
-                                repeatDelay: 17.6,
-                                repeat: Infinity,
-                                ease: "linear",
+                        className="flex whitespace-nowrap min-w-full"
+                        animate={{
+                            x: ["100%", "-250%"],
+                            transition: {
+                                x: {
+                                    duration: 40,
+                                    repeatDelay: 17.6,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                },
                             },
-                        },
-                    }}
-                >
-                    {[...Array(1)].map((_, i) => (
-                        <div key={i} className="flex gap-16 px-4 text-white text-lg font-medium">
-                            {
-                                item.map((tech, index) => (
-                                    <Image
-                                        src={tech.icon}
-                                        alt={tech.name}
-                                        key={index}
-                                        width={96}
-                                        height={96}
-                                        className="object-contain"
-                                        loading="lazy"
-                                    />
-                                ))
-                            }
-                        </div>
-                    ))}
-                </motion.div> */}
+                        }}
+                    >
+                        {[...Array(1)].map((_, i) => (
+                            <div key={i} className="flex gap-16 px-4 text-white text-lg font-medium">
+                                {
+                                    item.map((tech, index) => (
+                                        <Image
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            key={index}
+                                            width={96}
+                                            height={96}
+                                            className="object-contain"
+                                            loading="lazy"
+                                        />
+                                    ))
+                                }
+                            </div>
+                        ))}
+                    </motion.div> */}
             </div>
         </div>
 
@@ -152,12 +155,13 @@ export const Ticker = () => {
 export const Navigation = () => {
     const location = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations('nav');
 
     const navItems = [
-        { name: "Work", path: "/works" },
-        { name: "Experience", path: "/#experience" },
-        { name: "FAQ", path: "/#faq" },
-        { name: "Pricing", path: "/pricing" },
+        { name: t('works'), path: "/works" },
+        { name: t('experience'), path: "/#experience" },
+        { name: t('faq'), path: "/#faq" },
+        { name: t('pricing'), path: "/pricing" },
     ];
 
     return (
@@ -182,7 +186,7 @@ export const Navigation = () => {
                             </a>
                         ))}
                         <a href="/contact" className="text-sm font-medium bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-300 transition-colors">
-                            Get in Touch
+                            {t('contact')}
                         </a>
                     </div>
 
@@ -230,6 +234,8 @@ export const Navigation = () => {
 
 // Hero Component
 export const Hero = () => {
+    const t = useTranslations('hero');
+
     return (
         <section className="min-h-screen flex items-center justify-center px-4 pt-16">
             <div className="text-center max-w-4xl mx-auto">
@@ -257,9 +263,9 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
                 >
-                    Tailor-made websites.
+                    {t('title')}
                     <br />
-                    <span className="text-4xl md:text-6xl">Premium quality</span>
+                    <span className="text-4xl md:text-6xl">{t('subtitle')}</span>
                 </motion.h1>
 
                 <motion.p
@@ -268,7 +274,8 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto"
                 >
-                    Seasoned web developer with a strong background in building custom solutions.
+                    {t('description')}
+
                 </motion.p>
 
                 <motion.div
@@ -297,14 +304,14 @@ export const Hero = () => {
                             scale: 1.05,
                         }}
                     >
-                        <span>Get In Touch</span>
+                        <span>{t('contact')}</span>
                         <ChevronRight className="w-5 h-5" />
                     </motion.a>
                     <Link
                         href="/works"
                         className="inline-flex items-center space-x-2 backdrop-blur-md border-2 border-teal-500 hover:backdrop-blur-xl px-8 py-4 rounded-full text-teal-500 text-lg font-semibold transition-all transform hover:scale-105"
                     >
-                        <span>See my works</span>
+                        <span>{t('works')}</span>
                     </Link>
                 </motion.div>
 
@@ -315,18 +322,19 @@ export const Hero = () => {
 
 // About Component
 export const About = () => {
+    const t = useTranslations('about');
 
     const texts = [
-        { text: 'Web designer and expert in' },
-        { text: 'Web Development', highlight: true },
-        { text: 'with over' },
-        { text: '5 years', highlight: true },
-        { text: 'of industry experience.' },
-        { text: 'Expertise extends to' },
-        { text: 'Frontend Development', highlight: true },
-        { text: 'and' },
-        { text: 'Backend Development', highlight: true },
-        { text: 'both effective and easily maintainable.' }
+        { text: t('text1') },
+        { text: t('highlight1'), highlight: true },
+        { text: t('text2') },
+        { text: t('highlight2'), highlight: true },
+        { text: t('text3') },
+        { text: t('text4') },
+        { text: t('highlight3'), highlight: true },
+        { text: t('text5') },
+        { text: t('highlight4'), highlight: true },
+        { text: t('text6') }
     ]
 
     return (
@@ -334,23 +342,23 @@ export const About = () => {
             <div className="max-w-6xl mx-auto">
                 <div className="flex justify-center content-center text-center items-center">
                     {/* <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="flex items-center space-x-4 mb-8">
-                            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-400 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold">V</span>
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex items-center space-x-4 mb-8">
+                                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-400 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold">V</span>
+                                </div>
+                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold">≈</span>
+                                </div>
+                                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold">B</span>
+                                </div>
                             </div>
-                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold">≈</span>
-                            </div>
-                            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold">B</span>
-                            </div>
-                        </div>
-                    </motion.div> */}
+                        </motion.div> */}
 
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -411,14 +419,15 @@ export const About = () => {
 
 // Skills Carousel Component
 export const Skills = () => {
+    const t = useTranslations('skills');
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const skillGroups = [
         [
             { name: "UX Design", color: "bg-purple-600" },
             { name: "UI Design", color: "bg-pink-600" },
-            { name: "Frontend Development", color: "bg-blue-600" },
-            { name: "Backend Development", color: "bg-green-600" },
+            { name: t('frontend'), color: "bg-blue-600" },
+            { name: t('backend'), color: "bg-green-600" },
             { name: "React", color: "bg-blue-500" },
             { name: "Next.js", color: "bg-gray-800" },
             { name: "Angular", color: "bg-red-600" },
@@ -459,7 +468,7 @@ export const Skills = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-bold mb-16 text-center"
                 >
-                    Skills
+                    {t('title')}
                 </motion.h2>
 
                 {/* Carousel Container */}
@@ -499,23 +508,25 @@ export const Skills = () => {
 
 // Experience Component
 export const Experience = () => {
+    const t = useTranslations('experience');
+
     const experiences = [
         {
-            title: "Frontend Developer",
+            title: t('tiwala'),
             company: "Tiwala Solution Kft.",
-            duration: "Jan 2024 - Present",
+            duration: "Jan 2024 - " + t('present'),
             current: true
         },
         {
-            title: "Full Stack Developer",
+            title: t('integrity'),
             company: "Integrity Kft.",
             duration: "Jan 2023 - Jan 2024",
             current: false
         },
         {
-            title: "Web Developer",
+            title: t('freelance'),
             company: "Freelance",
-            duration: "Jun 2020 - Present",
+            duration: "Jun 2020 - " + t('present'),
             current: true
         }
     ];
@@ -530,7 +541,7 @@ export const Experience = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-bold mb-16 text-center"
                 >
-                    Experience
+                    {t('title')}
                 </motion.h2>
 
                 <div className="space-y-8">
@@ -551,7 +562,7 @@ export const Experience = () => {
                                 <p className="text-gray-400">{exp.duration}</p>
                                 {exp.current && (
                                     <span className="inline-block mt-2 px-3 py-1 bg-green-600 text-xs rounded-full">
-                                        Current
+                                        {t('current')}
                                     </span>
                                 )}
                             </div>
@@ -565,21 +576,23 @@ export const Experience = () => {
 
 // FAQ Component
 export const FAQ = () => {
+    const t = useTranslations('faq');
+
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const faqs = [
         {
-            question: "How long does a project usually take?",
-            answer: "The duration of a project depends on its complexity, but most projects are completed within 1 to 4 weeks. Simpler apps may take just a few days, while more complex systems might require more time for development and testing."
+            question: t('question1'),
+            answer: t('answer1')
         },
         {
-            question: "What technologies do I use for development?",
-            answer: "I specialize in modern web technologies including React, Next.js, Vue.js, Angular for frontend development, and Node.js, C# for backend development. I also work with various databases like MongoDB and MySQL."
+            question: t('question2'),
+            answer: t('answer2')
         },
         {
-            question: "What's the average cost of a project?",
-            answer: "Project costs depend on complexity, features, and timeline. I provide custom quotes based on your specific requirements. Contact me for a detailed proposal and transparent pricing."
-        }
+            question: t('question3'),
+            answer: t('answer3')
+        },
     ];
 
     return (
@@ -592,7 +605,7 @@ export const FAQ = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-bold mb-16 text-center"
                 >
-                    Frequently asked questions
+                   {t('title')}
                 </motion.h2>
 
                 <div className="space-y-4">
@@ -638,6 +651,8 @@ export const FAQ = () => {
 
 // Contact Component
 export const Contact = () => {
+    const t = useTranslations('contact');
+
     const [formData, setFormData] = useState({
         email: "",
         name: "",
@@ -649,7 +664,7 @@ export const Contact = () => {
         e.preventDefault();
         // Here you would typically send the form data to your backend
         console.log("Form submitted:", formData);
-        alert("Thank you for your message! I'll get back to you soon.");
+        alert(t("form.success"));
         setFormData({ email: "", name: "", message: "" });
     };
 
@@ -663,7 +678,7 @@ export const Contact = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-bold mb-16 text-center"
                 >
-                    Contact me
+                    {t("title")}
                 </motion.h2>
 
                 <motion.div
@@ -727,6 +742,7 @@ export const Contact = () => {
 
 // Footer Component
 export const Footer = () => {
+    const t = useTranslations('footer');
     const techIcons = [
         { name: "WordPress", color: "text-blue-400" },
         { name: "Vue.js", color: "text-green-400" },
@@ -742,18 +758,18 @@ export const Footer = () => {
         <footer className="py-12 px-4 ">
             <div className="max-w-6xl mx-auto">
                 {/* <div className="flex flex-wrap justify-center items-center space-x-8 mb-8">
-                    {techIcons.map((tech, index) => (
-                        <div
-                            key={index}
-                            className={`w-12 h-12 ${tech.color} flex items-center justify-center text-2xl font-bold`}
-                        >
-                            {tech.name.charAt(0)}
-                        </div>
-                    ))}
-                </div> */}
+                        {techIcons.map((tech, index) => (
+                            <div
+                                key={index}
+                                className={`w-12 h-12 ${tech.color} flex items-center justify-center text-2xl font-bold`}
+                            >
+                                {tech.name.charAt(0)}
+                            </div>
+                        ))}
+                    </div> */}
 
                 <div className="text-center text-gray-400 flex md:flex-row flex-col md:justify-between justify-center items-center">
-                    <p>&copy; 2025 Rozs Norbert. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Rozs Norbert. {t('copyright')}</p>
                     <div className="flex justify-center space-x-6 mt-4">
                         <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
                         <Link href="https://github.com/Rozsnono" className="hover:text-sky-200 transition-colors">GitHub</Link>
@@ -1144,6 +1160,8 @@ export const PricingFooter = () => {
 }
 
 export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
+    const t = useTranslations('contact');
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -1170,7 +1188,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
         // Simulate form submission
         setTimeout(() => {
-            setSubmitMessage('Thank you! We\'ll get back to you soon about your website project.');
+            setSubmitMessage(t('form.success'));
             setIsSubmitting(false);
             setFormData({ name: '', email: '', projectType: '', message: '' });
         }, 1000);
@@ -1190,12 +1208,12 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                         contactPage ?
                             <React.Fragment>
                                 {/* Form Title */}
-                                <h1 className="text-white text-3xl font-light mb-4 text-center font-mono">Get Your Website Built</h1>
-                                <p className="text-gray-400 text-center mb-12">Tell me about your project and I will help bring your vision to life</p>
+                                <h1 className="text-white text-3xl font-light mb-4 text-center font-mono">{t('bigTitle')}</h1>
+                                <p className="text-gray-400 text-center mb-12">{t('bigSubtitle')}</p>
                             </React.Fragment> :
                             <React.Fragment>
                                 {/* Form Title */}
-                                <h2 className="text-white text-5xl font-light mb-8 text-center font-mono">Contact Me</h2>
+                                <h2 className="text-white text-5xl font-light mb-8 text-center font-mono">{t('title')}</h2>
                             </React.Fragment>
                     }
                 </motion.div>
@@ -1211,7 +1229,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                         {/* Name Input */}
                         <div>
                             <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
-                                Full Name *
+                                {t('form.name')} *
                             </label>
                             <input
                                 type="text"
@@ -1221,14 +1239,14 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 onChange={handleInputChange}
                                 required
                                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                                placeholder="Enter your full name"
+                                placeholder={t('form.placeholderName')}
                             />
                         </div>
 
                         {/* Email Input */}
                         <div>
                             <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
-                                Email Address *
+                                {t('form.email')} *
                             </label>
                             <input
                                 type="email"
@@ -1238,14 +1256,14 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 onChange={handleInputChange}
                                 required
                                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                                placeholder="your.email@example.com"
+                                placeholder={t('form.placeholderEmail')}
                             />
                         </div>
 
                         {/* Project Type Select */}
                         <div>
                             <label htmlFor="projectType" className="block text-white text-sm font-medium mb-2">
-                                Project Type *
+                                {t('form.type')} *
                             </label>
                             <select
                                 id="projectType"
@@ -1255,22 +1273,22 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 required
                                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                             >
-                                <option value="">Select your project type</option>
-                                <option value="portfolio">Portfolio Website</option>
-                                <option value="business">Business/Corporate Website</option>
-                                <option value="ecommerce">E-commerce Store</option>
-                                <option value="blog">Blog/Content Website</option>
-                                <option value="landing">Landing Page</option>
-                                <option value="webapp">Web Application</option>
-                                <option value="redesign">Website Redesign</option>
-                                <option value="other">Other (Please specify in message)</option>
+                                <option value="">{t('form.placeholderType')}</option>
+                                <option value="portfolio">{t('form.websiteTypes.portfolio')}</option>
+                                <option value="business">{t('form.websiteTypes.business')}</option>
+                                <option value="ecommerce">{t('form.websiteTypes.ecommerce')}</option>
+                                <option value="blog">{t('form.websiteTypes.blog')}</option>
+                                <option value="landing">{t('form.websiteTypes.landing')}</option>
+                                <option value="webapp">{t('form.websiteTypes.webapp')}</option>
+                                <option value="redesign">{t('form.websiteTypes.redesign')}</option>
+                                <option value="other">{t('form.websiteTypes.other')}</option>
                             </select>
                         </div>
 
                         {/* Message Textarea */}
                         <div>
                             <label htmlFor="message" className="block text-white text-sm font-medium mb-2">
-                                Project Description *
+                                {t('form.description')} *
                             </label>
                             <textarea
                                 id="message"
@@ -1280,7 +1298,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 required
                                 rows={5}
                                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical"
-                                placeholder="Tell us about your website project... What's your vision? What features do you need? Any specific requirements or preferences?"
+                                placeholder={t('form.placeholderDescription')}
                             ></textarea>
                         </div>
 
@@ -1294,10 +1312,10 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 {isSubmitting ? (
                                     <div className="flex items-center justify-center">
                                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                                        Sending...
+                                        {t('form.sending')}
                                     </div>
                                 ) : (
-                                    'Send Project Request'
+                                    t('form.submit')
                                 )}
                             </button>
                         </div>
@@ -1315,16 +1333,16 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                 {/* Additional Info */}
                 <div className="mt-8 text-center">
                     <p className="text-gray-400 text-sm">
-                        We typically respond within 24 hours • Free consultation included
+                        {t('response')}
                     </p>
                     <p className="text-gray-400 text-xs mt-2 italic">
-                        Please do not submit spam or unsolicited offers. This form is for genuine project inquiries only.
+                        {t('spam')}
                     </p>
                     {/* <div className="mt-4">
-                        <p className="text-gray-400 text-sm">
-                            By submitting this form, you agree to our <Link href="/privacy-policy" className="text-blue-400 hover:underline">Privacy Policy</Link>.
-                        </p>
-                    </div> */}
+                            <p className="text-gray-400 text-sm">
+                                By submitting this form, you agree to our <Link href="/privacy-policy" className="text-blue-400 hover:underline">Privacy Policy</Link>.
+                            </p>
+                        </div> */}
                 </div>
             </div>
         </div>
@@ -1332,17 +1350,21 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 };
 
 export const LanguageSelector = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState('en');
+    const locale = useLocale();
+    const [selectedLanguage, setSelectedLanguage] = useState(locale as Locale);
     const [isOpen, setIsOpen] = useState(false);
 
+
     const languages = [
-        { code: 'en', label: 'English' },
-        { code: 'hu', label: 'Magyar' },
+        { code: 'en' as Locale, label: 'English' },
+        { code: 'hu' as Locale, label: 'Magyar' },
         // Add more if needed
     ];
 
-    const handleLanguageChange = (lang: string) => {
+
+    const handleLanguageChange = (lang: Locale) => {
         setSelectedLanguage(lang);
+        setUserLocale(lang);
         setIsOpen(false);
         // Example: i18n.changeLanguage(lang);
     };
