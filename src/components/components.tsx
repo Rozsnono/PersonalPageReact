@@ -888,31 +888,34 @@ export const Prices = () => {
     const services = [
         {
             title: "Basic Website",
-            price: "€?,???",
+            price: "€799",
             description: "Perfect for small businesses and personal portfolios",
             features: [
                 "Responsive Design",
-                "Up to 5 Pages",
+                "Up to 3 Pages",
                 "Contact Form",
                 "Basic SEO",
                 "Mobile Optimization",
-                "3 Months Support"
+                "3 Months Support",
             ],
             popular: false
         },
         {
             title: "Advanced Web App",
-            price: "€?,???",
+            price: "€1,499",
             description: "Full-featured web applications with custom functionality",
             features: [
                 "Custom Development",
                 "Database Integration",
                 "User Authentication",
+                "Up to 5 Pages",
                 "Admin Dashboard",
                 "API Integration",
                 "6 Months Support",
-                "Performance Optimization"
+                "Performance Optimization",
+                "5 Revisions",
             ],
+            note: "Everything is included from the Basic Website package",
             popular: true
         },
         {
@@ -1004,6 +1007,14 @@ export const Prices = () => {
                             >
                                 Get Started
                             </Link>
+
+                            {
+                                service.note &&
+                                <p className="text-sm text-gray-400 mt-4 gap-1 text-center">
+                                    <span className="text-blue-400 font-semibold me-1">Note:</span>
+                                    {service.note}
+                                </p>
+                            }
                         </div>
                     ))}
                 </div>
@@ -1082,7 +1093,7 @@ export const TimeLine = () => {
                     <div className="space-y-4">
                         {/* Design Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h1 className="text-white text-lg font-medium text-center">Week 1 - 2</h1>
+                            <h3 className="text-white text-lg font-medium text-center">Week 1 - 2</h3>
                             <div className="bg-purple-800/50 hover:bg-purple-800/80 ring-4 ring-purple-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
                                 Design Phase
                             </div>
@@ -1090,7 +1101,7 @@ export const TimeLine = () => {
 
                         {/* Development Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h1 className="text-white text-lg font-medium text-center">Week 2 - 3</h1>
+                            <h3 className="text-white text-lg font-medium text-center">Week 2 - 3</h3>
                             <div className="bg-amber-800/50 hover:bg-amber-700/60 ring-4 ring-amber-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
                                 Development Phase
                             </div>
@@ -1098,7 +1109,7 @@ export const TimeLine = () => {
 
                         {/* QA & Testing Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h1 className="text-white text-lg font-medium text-center">Week 4</h1>
+                            <h3 className="text-white text-lg font-medium text-center">Week 4</h3>
                             <div className="bg-green-800/50 hover:bg-green-800/80 ring-4 ring-green-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
                                 QA & Testing
                             </div>
@@ -1182,7 +1193,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                             </React.Fragment> :
                             <React.Fragment>
                                 {/* Form Title */}
-                                <h1 className="text-white text-5xl font-light mb-8 text-center font-mono">Contact Me</h1>
+                                <h2 className="text-white text-5xl font-light mb-8 text-center font-mono">Contact Me</h2>
                             </React.Fragment>
                     }
                 </motion.div>
