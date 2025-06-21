@@ -1,4 +1,4 @@
-import Ticker, { About, ContactForm, Experience, FAQ, Footer, Hero, Navigation, Skills } from "@/components/components";
+import { About, ContactForm, Experience, FAQ, Footer, Hero, Navigation, Skills, Ticker } from "@/components/components";
 
 export default function Home() {
   return (

@@ -6,7 +6,7 @@ import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Ticker() {
+export const Ticker = () => {
 
     const item = [
         {
@@ -84,8 +84,32 @@ export default function Ticker() {
                         "linear-gradient(to right, transparent, white 20%, white 80%, transparent)",
                 }}
             >
+                <div className="overflow-hidden w-full">
+                    <motion.div
+                        className="flex gap-16 px-4 whitespace-nowrap"
+                        animate={{ x: ["100%", "-250%"] }}
+                        transition={{
+                            duration: 50,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    >
+                        {item.map((tech, index) => (
+                            <div key={index} className="flex-shrink-0">
+                                <Image
+                                    src={tech.icon}
+                                    alt={tech.name}
+                                    width={96}
+                                    height={96}
+                                    className="object-contain"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
 
-                <motion.div
+                {/* <motion.div
                     className="flex whitespace-nowrap min-w-full"
                     animate={{
                         x: ["100%", "-250%"],
@@ -116,45 +140,12 @@ export default function Ticker() {
                             }
                         </div>
                     ))}
-                </motion.div>
-                <motion.div
-                    className="flex whitespace-nowrap absolute top-4 min-w-full"
-                    animate={{
-                        x: ["100%", "-250%"],
-                        transition: {
-                            x: {
-                                duration: 40,
-                                delay: 28.7,
-                                repeat: Infinity,
-                                ease: "linear",
-                            },
-                        },
-                    }}
-                >
-                    {[...Array(1)].map((_, i) => (
-                        <div key={i} className="flex gap-16 px-4 text-white text-lg font-medium">
-                            {
-                                item.map((tech, index) => (
-                                    <Image
-                                        src={tech.icon}
-                                        alt={tech.name}
-                                        key={index}
-                                        width={96}
-                                        height={96}
-                                        className="object-contain"
-                                        priority
-                                    />
-                                ))
-                            }
-                        </div>
-                    ))}
-                </motion.div>
+                </motion.div> */}
             </div>
         </div>
 
     );
 }
-
 
 // Navigation Component - Redesigned as requested
 export const Navigation = () => {
@@ -481,7 +472,7 @@ export const Skills = () => {
                                     key={groupIndex}
                                     className="w-full flex-shrink-0 px-8 py-12"
                                 >
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+                                    <div className="md:grid md:grid-cols-4 flex flex-wrap gap-6 justify-center">
                                         {group.map((skill, index) => (
                                             <motion.div
                                                 key={skill.name}
@@ -489,7 +480,7 @@ export const Skills = () => {
                                                 whileInView={{ opacity: 1, scale: 1 }}
                                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                                 viewport={{ once: true }}
-                                                className={`border border-gray-500/50 cursor-pointer hover:bg-gray-700/50 bg-gray-800/40 px-6 py-4 rounded-3xl text-white font-medium text-center hover:scale-105 transition-transform cursor-default shadow-lg`}
+                                                className={`border border-gray-500/50 md:w-full w-fit cursor-pointer hover:bg-gray-700/50 bg-gray-800/40 px-6 py-4 rounded-3xl text-white font-medium text-center hover:scale-105 transition-transform cursor-default shadow-lg`}
                                             >
                                                 {skill.name}
                                             </motion.div>
@@ -760,7 +751,7 @@ export const Footer = () => {
                     ))}
                 </div> */}
 
-                <div className="text-center text-gray-400 flex justify-between items-center">
+                <div className="text-center text-gray-400 flex md:flex-row flex-col md:justify-between justify-center items-center">
                     <p>&copy; 2025 Rozs Norbert. All rights reserved.</p>
                     <div className="flex justify-center space-x-6 mt-4">
                         <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
