@@ -119,14 +119,14 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Rozs Norbert - Web Developer",
-  "url": "https://rozs-norbert.vercel.app",
+  "url": "https://rozsnorbert.vercel.app",
   "sameAs": [
     "https://www.linkedin.com/in/rozs-norbert",
     "https://github.com/rozsnorbert"
   ],
   "jobTitle": "Frontend Developer",
   "worksFor": {
-    "@type": "Organization",  
+    "@type": "Organization",
     "name": "..."
   }
 };
