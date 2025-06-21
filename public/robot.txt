@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rozsorbert.vercel.app/sitemap.xml
