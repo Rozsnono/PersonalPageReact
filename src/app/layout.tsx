@@ -115,6 +115,22 @@ export const metadata: Metadata = {
   ]
 };
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rozs Norbert - Web Developer",
+  "url": "https://rozs-norbert.vercel.app",
+  "sameAs": [
+    "https://www.linkedin.com/in/rozs-norbert",
+    "https://github.com/rozsnorbert"
+  ],
+  "jobTitle": "Frontend Developer",
+  "worksFor": {
+    "@type": "Organization",  
+    "name": "..."
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -122,6 +138,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
