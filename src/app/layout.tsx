@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Freehand } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const freehand = Freehand({
+  variable: "--font-freehand",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const geistMono = Geist_Mono({
@@ -146,7 +152,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://rozsnorbert.vercel.app" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} antialiased`}
       >
         {children}
         <Analytics />
