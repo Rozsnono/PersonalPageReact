@@ -835,7 +835,7 @@ export const Footer = () => {
                     <div className="flex justify-center space-x-6 mt-4">
                         <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
                         <Link href="https://github.com/Rozsnono" className="hover:text-sky-200 transition-colors">GitHub</Link>
-                        <Link href="mailto:rozsnono@gmail.com" className="hover:text-sky-200 transition-colors">Mail</Link>
+                        <Link href="mailto:rozsnorbert39@gmail.com" className="hover:text-sky-200 transition-colors">Mail</Link>
                     </div>
                 </div>
             </div>
