@@ -79,7 +79,8 @@
             "placeholderDescription": "Mesélj a weboldal projektedről... Mi a víziód? Milyen funkciókra van szükséged? Vannak különleges igényeid vagy preferenciáid?",
             "submit": "Projektkérés elküldése",
             "sending": "Küldés folyamatban...",
-            "success": "Köszönjük! Hamarosan felveszem veled a kapcsolatot a weboldal projekteddel kapcsolatban."
+            "success": "Köszönjük! Hamarosan felveszem veled a kapcsolatot a weboldal projekteddel kapcsolatban.",
+            "error": "Hiba történt az üzenet küldésekor. Kérlek, próbáld újra később."
         },
         "response": "Általában 24 órán belül válaszolok • Ingyenes konzultációt is biztosítok",
         "spam": "Kérjük, ne küldj spameket vagy kéretlen ajánlatokat. Ez az űrlap kizárólag valódi projektmegkeresésekre szolgál."

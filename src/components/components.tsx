@@ -1234,6 +1234,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
+    const [isError, setIsError] = useState(false);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleInputChange = (e: any) => {
@@ -1251,7 +1252,8 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
         // Simulate form submission
         setTimeout(() => {
-            setSubmitMessage(t('form.success'));
+            // setSubmitMessage(t('form.success'));
+            setIsError(true);
             setIsSubmitting(false);
             setFormData({ name: '', email: '', projectType: '', message: '' });
         }, 1000);
@@ -1389,6 +1391,15 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                                 {submitMessage}
                             </div>
                         )}
+
+                        {/* Error Message */}
+                        {isError && (
+                            <div className="bg-red-800/80 border border-red-700 text-red-300 px-4 py-3 rounded-lg text-center">
+                                {t('form.error')}
+                            </div>
+                        )}
+
+
                     </form>
                 </motion.div>
 

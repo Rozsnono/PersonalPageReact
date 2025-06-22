@@ -79,7 +79,8 @@
             "placeholderDescription": "Tell me about your website project... What's your vision? What features do you need? Any specific requirements or preferences?",
             "submit": "Send Project Request",
             "sending": "Sending...",
-            "success": "Thank you! I will get back to you soon about your website project."
+            "success": "Thank you! I will get back to you soon about your website project.",
+            "error": "Oops! Something went wrong. Please try again later."
         },
         "response": "We typically respond within 24 hours • Free consultation included",
         "spam": "Please do not submit spam or unsolicited offers. This form is for genuine project inquiries only."
