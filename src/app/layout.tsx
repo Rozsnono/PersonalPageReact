@@ -53,6 +53,7 @@ export const metadata: Metadata = {
   keywords: [
     "Norbert Rozs",
     "Next.js fejlesztő",
+    "rozsnono",
     "React portfólió",
     "TypeScript webfejlesztő",
     "senior technikai konzultáns",
