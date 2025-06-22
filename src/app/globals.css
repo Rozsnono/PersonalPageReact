@@ -31,6 +31,10 @@ body {
   font-family: 'Freehand', 'Caveat', cursive;
 }
 
+.quote{
+  font-family: 'Sriracha', 'Caveat', cursive;
+}
+
 html {
   scroll-behavior: smooth;
 }

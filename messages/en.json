@@ -86,5 +86,153 @@
     },
     "footer": {
         "copyright": "All rights reserved."
+    },
+    "works": {
+        "title": "My Works",
+        "planit": {
+            "title": "PlanIt - The Card Game",
+            "description": "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
+            "status": "In development"
+        },
+        "study": {
+            "title": "Study Assistant Application",
+            "description": "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",
+            "status": "See for yourself"
+        },
+        "coincash": {
+            "title": "CoinCash - Cryptocurrency Exchange",
+            "description": "A user-friendly platform for buying cryptocurrencies and tracking their price in real-time. Stay informed about the market, manage your digital investments effortlessly, all in one place.",
+            "status": "See for yourself"
+        },
+        "bluecard": {
+            "title": "BlueCard",
+            "description": "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
+            "status": "In development"
+        }
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "description": "Oops! The page you&apos;re looking for doesn&apos;t exist. It might have been moved, deleted, or you entered the wrong URL.",
+        "error": "If you believe this is an error, please contact support or try refreshing the page.",
+        "button": "Go to Homepage"
+    },
+    "aboutPage": {
+        "hero": {
+            "hello": "Hello, I'm",
+            "name": "Rozs Norbert",
+            "title": "Seasoned Web Developer",
+            "description": "I am passionate about crafting tailor-made websites with precision and creativity. With a strong background in building custom solutions, I deliver premium quality design, fast performance, and modern code for your business success.",
+            "description2": "Currently pursuing Computer Engineering while working as a Frontend Developer. I love solving complex problems and turning ideas into beautiful, functional web experiences.",
+            "frontend": "Frontend Specialist",
+            "fullstack": "Fullstack Developer",
+            "custom": "Custom Solutions"
+        },
+        "skills": {
+            "title": "What I Bring to the Table",
+            "description": "Over the years, I have honed my skills across the full development spectrum. Here are the technologies I am most passionate about working with:",
+            "frontend": {
+                "title": "Frontend Mastery",
+                "description": "Creating beautiful, responsive user interfaces"
+            },
+            "backend": {
+                "title": "Backend Expertise",
+                "description": "Building robust, scalable server-side solutions"
+            },
+            "tools": {
+                "title": "Tools & Technologies",
+                "description": "Utilizing the latest technologies for optimal performance"
+            }
+        },
+        "philosophy": {
+            "title": "My Philosophy",
+            "precision": {
+                "title": "Precision",
+                "description": "Every line of code serves a purpose. I believe in clean, maintainable solutions."
+            },
+            "performance": {
+                "title": "Performance",
+                "description": "Fast loading times and smooth user experiences are non-negotiable."
+            },
+            "innovation": {
+                "title": "Innovation",
+                "description": "I stay current with the latest technologies to deliver modern solutions.."
+            }
+        },
+        "jobs": {
+            "title": "My Professional Journey",
+            "description": "From student to professional developer - here is how I have grown and what I have accomplished along the way.",
+            "tiwala": {
+                "title": "Frontend Developer",
+                "company": "Tiwala Solution Kft.",
+                "description": "Currently focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
+                "duration": "Jan 2024 - Present",
+                "skills": "Angular, Typescript, HTML, CSS"
+            },
+            "integrity": {
+                "title": "Fullstack Developer",
+                "company": "Integrity Kft.",
+                "description": "This role really shaped me as a developer. I built complete web solutions from database design to user interfaces. Working on diverse projects taught me the importance of scalable architecture and clean code practices.",
+                "duration": "Jan 2022 - Dec 2023",
+                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js"
+            },
+            "freelance": {
+                "title": "Freelance Web Developer",
+                "company": "Self-employed",
+                "description": "This is where my passion truly began. Working directly with clients taught me the business side of development - understanding requirements, managing timelines, and delivering solutions that really make a difference. Every project is a new adventure!",
+                "duration": "Jun 2020 - Present",
+                "skills": "Custom Solutions, Client Management, Full-Stack"
+            },
+            "proud": {
+                "title": "What I am Proud Of",
+                "projects": {
+                    "title": "Completed Projects",
+                    "description": "Since starting my journey"
+                },
+                "years": {
+                    "title": "Years of Experience",
+                    "description": "Learning and growing every day"
+                },
+                "description": "I believe that every project is an opportunity to learn and innovate. I am excited about the future and the challenges it will bring!"
+            }
+        },
+        "studies": {
+            "title": "Learning Never Stops",
+            "description": " Balancing formal education with real-world experience has given me both theoretical knowledge and practical skills.",
+            "sze": {
+                "title": "Computer Engineering (BSc)",
+                "school": "Győri Széchenyi István Egyetem",
+                "skills": "Data Structures, Algorithms, System Design, Software Engineering",
+                "description": "Currently pursuing my bachelor's degree while working full-time. It is challenging but incredibly rewarding! I love how the theoretical concepts connect with the real-world problems I solve at work. Advanced studies in algorithms, system design, and software architecture.",
+                "duration": "Sep 2022 - Feb 2026"
+            },
+            "jedlik": {
+                "title": "Software Developer and Tester",
+                "school": "Győri SZC Jedlik Ányos Gépipari és Informatikai Technikum",
+                "skills": "Programming Basics, Testing, Problem Solving",
+                "description": "This is where it all began! My foundation in programming started here. Learning the basics of coding, understanding testing methodologies, and discovering my passion for creating digital solutions. Those late nights debugging code taught me persistence pays off!",
+                "duration": "Sep 2017 - Jun 2022"
+            }
+        },
+        "personal": {
+            "title": "Beyond Code",
+            "description": "I believe that a well-rounded life fuels creativity and innovation. Here are some of my passions outside of coding:",
+            "music": {
+                "title": "Music",
+                "description": "I code better with good music! From pop beats to classical - music fuels my creativity."
+            },
+            "learning": {
+                "title": "Continuous Learning",
+                "description": " Always exploring new technologies, reading tech blogs, and taking online courses."
+            },
+            "gaming": {
+                "title": "Gaming",
+                "description": "Gaming taught me problem-solving and strategic thinking - skills I use in development too!"
+            },
+            "travel": {
+                "title": "Travel & Culture",
+                "description": "Exploring different places and cultures gives me fresh perspectives for creative solutions."
+            },
+            "quote": "First, you have to finish"
+        }
     }
 }

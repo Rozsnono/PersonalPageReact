@@ -86,5 +86,153 @@
     },
     "footer": {
         "copyright": "Minden jog fenntartva"
+    },
+    "works": {
+        "title": "Munkáim",
+        "planit": {
+            "title": "PlanIt – A Kártyajáték",
+            "description": "Egy gyors, böngészőalapú kártyajáték platform, ahol olyan klasszikusokat élvezhetsz, mint a Römik, UNO és a Pasziánsz. Nincs szükség letöltésre, csak tiszta játékélmény, ami bármelyik számítógépen zökkenőmentesen működik.",
+            "status": "Fejlesztés alatt"
+        },
+        "study": {
+            "title": "Tanulássegítő alkalmazás",
+            "description": "Egy egyszerű webalkalmazás, amely segít a tanulási idő beosztásában és a feladatok kezelésében. Könnyen hozzáadhatod és rendszerezheted tanóráidat, és nyomon követheted a közelgő vizsgákat – mindezt egy átlátható felületen.",
+            "status": "Nézd meg magad"
+        },
+        "coincash": {
+            "title": "CoinCash – Kriptotőzsde",
+            "description": "Felhasználóbarát platform kriptovaluták vásárlására és árfolyamaik valós idejű követésére. Maradj naprakész a piacon, kezeld digitális befektetéseidet könnyedén – mindezt egy helyen.",
+            "status": "Nézd meg magad"
+        },
+        "bluecard": {
+            "title": "BlueCard",
+            "description": "Egy mobilos kísérőalkalmazás munkahelyek, főiskolák és más biztonságos létesítmények számára. QR-kódokat használ, így kényelmes vonalkódot biztosít a telefonodon. Eszközök szinkronizálása egyszerűen és biztonságosan – közvetlenül a készülékedről.",
+            "status": "Fejlesztés alatt"
+        }
+    },
+    "notFound": {
+        "title": "Az oldal nem található",
+        "description": "Hoppá! A keresett oldal nem létezik. Lehet, hogy áthelyezték, törölték, vagy hibásan adtad meg az URL-t.",
+        "error": "Ha úgy gondolod, hogy ez egy hiba, kérlek, lépj kapcsolatba velem.",
+        "button": "Ugrás a kezdőlapra"
+    },
+    "aboutPage": {
+        "hero": {
+            "hello": "Helló, a nevem",
+            "name": "Rozs Norbert",
+            "title": "Tapasztalt webfejlesztő",
+            "description": "Szenvedélyem az egyedi weboldalak készítése precizitással és kreativitással. Erős háttérrel rendelkezem az egyedi megoldások terén, prémium minőségű dizájnt, gyors teljesítményt és modern kódot szállítok az üzleti siker érdekében.",
+            "description2": "Jelenleg mérnökinformatikusnak tanulok, miközben frontend fejlesztőként dolgozom. Imádom a bonyolult problémák megoldását, és hogy ötleteket gyönyörű, működő webes élményekké alakíthatok.",
+            "frontend": "Frontend specialista",
+            "fullstack": "Fullstack fejlesztő",
+            "custom": "Egyedi megoldások"
+        },
+        "skills": {
+            "title": "Amit nyújtani tudok",
+            "description": "Az évek során fejlesztettem képességeimet a teljes fejlesztési spektrumon. Íme azok a technológiák, amelyekkel a legszívesebben dolgozom:",
+            "frontend": {
+                "title": "Frontend szakértelem",
+                "description": "Gyönyörű, reszponzív felhasználói felületek készítése"
+            },
+            "backend": {
+                "title": "Backend tudás",
+                "description": "Erős, skálázható szerveroldali megoldások építése"
+            },
+            "tools": {
+                "title": "Eszközök és technológiák",
+                "description": "A legújabb technológiák használata az optimális teljesítményért"
+            }
+        },
+        "philosophy": {
+            "title": "Filozófiám",
+            "precision": {
+                "title": "Precizitás",
+                "description": "Minden kód célját szolgálja. Hiszek a tiszta, könnyen karbantartható megoldásokban."
+            },
+            "performance": {
+                "title": "Teljesítmény",
+                "description": "Gyors betöltés és gördülékeny felhasználói élmény – ez alapelv."
+            },
+            "innovation": {
+                "title": "Innováció",
+                "description": "Folyamatosan követem az új technológiákat, hogy modern megoldásokat nyújthassak."
+            }
+        },
+        "jobs": {
+            "title": "Szakmai utam",
+            "description": "Diákból profi fejlesztő – így fejlődtem, és ezeket értem el eddig.",
+            "tiwala": {
+                "title": "Frontend fejlesztő",
+                "company": "Tiwala Solution Kft.",
+                "description": "Jelenleg modern, reszponzív webalkalmazások fejlesztésére fókuszálok korszerű frontend technológiák használatával. Szorosan együttműködöm a design csapattal, hogy az elképzelések életre keljenek, miközben kiemelt figyelmet fordítok a felhasználói élményre és teljesítményre.",
+                "duration": "2024. január – Jelenleg is",
+                "skills": "Angular, Typescript, HTML, CSS"
+            },
+            "integrity": {
+                "title": "Fullstack fejlesztő",
+                "company": "Integrity Kft.",
+                "description": "Ez a szerep formált igazán fejlesztővé. Komplett webes megoldásokat készítettem az adatbázistervezéstől a felhasználói felületig. Sokféle projekten dolgoztam, ami megtanított a skálázható architektúra és a tiszta kód fontosságára.",
+                "duration": "2022. január – 2023. december",
+                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js"
+            },
+            "freelance": {
+                "title": "Webfejlesztő",
+                "company": "Önfoglalkoztató",
+                "description": "Itt kezdődött minden. A közvetlen ügyfélmunka megtanított a fejlesztés üzleti oldalára is – igényfelmérés, határidő-kezelés, valódi értéket teremtő megoldások szállítása. Minden projekt új kaland!",
+                "duration": "2020. június – Jelenleg is",
+                "skills": "Egyedi megoldások, ügyfélkapcsolat, teljes stack"
+            },
+            "proud": {
+                "title": "Amire büszke vagyok",
+                "projects": {
+                    "title": "Befejezett projektek",
+                    "description": "A pályafutásom kezdete óta"
+                },
+                "years": {
+                    "title": "Év tapasztalat",
+                    "description": "Minden nap tanulok és fejlődök"
+                },
+                "description": "Hiszem, hogy minden projekt lehetőség a tanulásra és az innovációra. Izgatottan várom, mit hoz a jövő!"
+            }
+        },
+        "studies": {
+            "title": "A tanulás sosem ér véget",
+            "description": "A formális oktatás és a valós tapasztalat egyensúlya elméleti tudást és gyakorlati készségeket is adott.",
+            "sze": {
+                "title": "Számítástechnikai mérnök (BSc)",
+                "school": "Győri Széchenyi István Egyetem",
+                "skills": "Adatszerkezetek, Algoritmusok, Rendszertervezés, Szoftvermérnökség",
+                "description": "Jelenleg a BSc diplomámat végzem, miközben teljes munkaidőben dolgozom. Kihívás, de hihetetlenül motiváló! Imádom, ahogy az elméleti fogalmak kapcsolódnak a munkahelyi problémákhoz. Haladó tanulmányok algoritmusokból, rendszertervezésből és szoftverarchitektúrából.",
+                "duration": "2022. szeptember – 2026. február"
+            },
+            "jedlik": {
+                "title": "Szoftverfejlesztő és -tesztelő",
+                "school": "Győri SZC Jedlik Ányos Gépipari és Informatikai Technikum",
+                "skills": "Programozási alapok, Tesztelés, Problémamegoldás",
+                "description": "Itt kezdődött minden! Az első programozási ismereteimet itt szereztem. Megtanultam az alapokat, a tesztelési módszertanokat, és felfedeztem, mennyire élvezem a digitális megoldások alkotását. Azok az éjszakák, amikor hibakereséssel töltöttem az időt, megtanítottak, hogy a kitartás mindig kifizetődik.",
+                "duration": "2017. szeptember – 2022. június"
+            }
+        },
+        "personal": {
+            "title": "Kódon túl",
+            "description": "Hiszem, hogy a kiegyensúlyozott élet táplálja a kreativitást és az innovációt. Ezek iránt lelkesedem a kódoláson túl:",
+            "music": {
+                "title": "Zene",
+                "description": "Jobban megy a kódolás jó zenével! A poptól kezdve a klasszikusig – a zene inspirál."
+            },
+            "learning": {
+                "title": "Folyamatos tanulás",
+                "description": "Mindig új technológiákat fedezek fel, tech blogokat olvasok, és online kurzusokat végzek."
+            },
+            "gaming": {
+                "title": "Játék",
+                "description": "A játék megtanított a problémamegoldásra és a stratégiai gondolkodásra – ezek a fejlesztésben is hasznosak!"
+            },
+            "travel": {
+                "title": "Utazás és kultúrák",
+                "description": "Új helyek és kultúrák felfedezése friss nézőpontokat ad a kreatív megoldásokhoz."
+            },
+            "quote": "Először célba kell hogy érj"
+        }
     }
 }

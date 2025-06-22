@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Freehand } from "next/font/google";
+import { Geist, Geist_Mono, Freehand, Sriracha } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
@@ -13,6 +13,12 @@ const geistSans = Geist({
 
 const freehand = Freehand({
   variable: "--font-freehand",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const sriracha = Sriracha({
+  variable: "--font-sriracha",
   subsets: ["latin"],
   weight: "400",
 });
@@ -157,7 +163,7 @@ export default async function RootLayout({
         <link rel="canonical" href="https://rozsnorbert.vercel.app" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} ${sriracha.variable} antialiased`}
       >
         <NextIntlClientProvider>
           {children}

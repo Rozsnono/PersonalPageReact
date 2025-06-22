@@ -159,8 +159,8 @@ export const Navigation = () => {
 
     const navItems = [
         { name: t('works'), path: "/works" },
+        { name: t('about'), path: "/about" },
         { name: t('experience'), path: "/#experience" },
-        { name: t('faq'), path: "/#faq" },
         { name: t('pricing'), path: "/pricing" },
     ];
 
@@ -846,37 +846,38 @@ export const Footer = () => {
 // Works Page Component - Special focus as requested
 export const WorksPage = () => {
     const [selectedProject, setSelectedProject] = useState(0);
+    const t = useTranslations('works');
 
     const projects = [
         {
-            title: "PlanIt - The Card game",
-            description: "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
+            title: t('planit.title'),
+            description: t('planit.description'),
             image: "/works/planit.png",
-            status: "Coming Soon",
+            status: t('planit.status'),
             link: null,
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
-            title: "Study Assistant Application",
-            description: "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",
+            title: t('study.title'),
+            description: t('study.description'),
             image: "/works/tanulas.png",
-            status: "See for yourself",
+            status: t('study.status'),
             link: 'https://tanulas.netlify.app',
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
-            title: "CoinCash",
-            description: "A user-friendly platform for buying cryptocurrencies and tracking their price in real-time. Stay informed about the market, manage your digital investments effortlessly, all in one place.",
+            title: t('coincash.title'),
+            description: t('coincash.description'),
             image: "/works/coincash.png",
-            status: "See for yourself",
+            status: t('coincash.status'),
             link: 'https://coincash.eu',
             technologies: ["Angular", "Node.js", "PHP", "Python", "MySQL"]
         },
         {
-            title: "BlueCard",
-            description: "A mobile companion app ideal for workplaces, colleges, and other secure facilities. Featuring QR codes, offers a convenient barcode on your phone. Sync devices easily and securely, all from your device.",
+            title: t('bluecard.title'),
+            description: t('bluecard.description'),
             image: "/works/bluecard.png",
-            status: "Coming Soon",
+            status: t('bluecard.status'),
             link: null,
             technologies: ["Next.js", "Node.js", "MongoDB"]
         }
@@ -891,7 +892,7 @@ export const WorksPage = () => {
                     transition={{ duration: 0.8 }}
                     className="text-5xl font-bold text-center mb-16"
                 >
-                    Works
+                    {t('title')}
                 </motion.h1>
 
                 <div className="space-y-20">
@@ -922,11 +923,11 @@ export const WorksPage = () => {
                                 </div>
 
                                 <button
-                                    className={`px-6 py-3 rounded-lg font-medium transition-all ${project.status === "Coming Soon"
+                                    className={`px-6 py-3 rounded-lg font-medium transition-all ${project.link === null
                                         ? "bg-gray-700 text-gray-400 cursor-not-allowed"
                                         : "bg-blue-600 hover:bg-blue-700 text-white hover:scale-105 cursor-pointer"
                                         }`}
-                                    disabled={project.status === "Coming Soon"}
+                                    disabled={project.link === null}
                                     onClick={() => {
                                         if (project.link) {
                                             window.open(project.link, "_blank");
