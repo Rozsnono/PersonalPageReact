@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { Navigation } from "@/components/components";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";

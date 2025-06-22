@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rozsnorbert.vercel.app
+
+# Sitemaps
+Sitemap: https://rozsnorbert.vercel.app/sitemap.xml

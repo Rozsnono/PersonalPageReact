@@ -10,7 +10,6 @@ export default function Home() {
         <Ticker />
         <Skills />
         <Experience />
-        <Studies />
         <FAQ />
         <ContactForm />
         <Footer />
