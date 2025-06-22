@@ -235,5 +235,62 @@
             },
             "quote": "Először célba kell hogy érj"
         }
+    },
+    "pricing": {
+        "title": "Árak és Szolgáltatások",
+        "description": "Átlátható árképzés minőségi webfejlesztési szolgáltatásokhoz. Válaszd ki a csomagot, ami legjobban illik a projektedhez.",
+        "basic": {
+            "title": "Alap Weboldal",
+            "description": "Tökéletes kisvállalkozásoknak és személyes portfóliókhoz",
+            "features": "Reszponzív dizájn, Kezdőlap + 404 oldal, Kapcsolati űrlap, Alap SEO, Mobilra optimalizált, 3 hónap támogatás, 3 módosítási lehetőség"
+        },
+        "advanced": {
+            "title": "Haladó Webalkalmazás",
+            "description": "Teljes funkcionalitású webalkalmazások egyedi funkciókkal",
+            "features": "Reszponzív dizájn, Legfeljebb 5 oldal, Haladó SEO, Mobil optimalizálás, Teljesítményoptimalizálás, 6 hónap támogatás, 8 módosítás",
+            "note": "Tartalmazza az Alap Weboldal csomag minden elemét"
+        },
+        "custom": {
+            "title": "Egyedi Megoldások",
+            "description": "Nagyobb léptékű alkalmazások összetett igényekkel",
+            "features": "Egyedi fejlesztés, Adatbázis integráció, Felhasználó hitelesítés, Legfeljebb 5 oldal, Admin felület, API integráció, 6 hónap támogatás, Teljesítmény optimalizálás, 5 módosítás",
+            "note": "Tartalmazza a Haladó Weboldal csomag minden elemét"
+        },
+        "popular": "Legnépszerűbb",
+        "started": "Kezdjük el",
+        "note": "Megjegyzés:",
+        "services": "Kiegészítő Szolgáltatások",
+        "notes": "Az árak tájékoztató jellegűek, a projekt összetettségétől függően változhatnak. Kérj egyedi árajánlatot az igényeidhez igazítva. A projekt elindításához előleg szükséges: 25%, a fennmaradó rész az elkészüléskor esedékes.",
+        "add_services": {
+            "main": "Weboldal karbantartás",
+            "extra": "További oldalak",
+            "admin": "Domain ügyintézés",
+            "service": "Meglévő weboldal újratervezése"
+        },
+        "month": "hónap",
+        "page": "oldal"
+    },
+    "timeline": {
+        "title": "Ütemezés",
+        "weeks": {
+            "week1": "1. hét",
+            "week2": "2. hét",
+            "week12": "1–2. hét",
+            "week3": "3. hét",
+            "week23": "2–3. hét",
+            "week4": "4. hét"
+        },
+        "steps": {
+            "step1": "Tervezési Fázis",
+            "step2": "Fejlesztési Fázis",
+            "step3": "Tesztelés és Minőségbiztosítás"
+        },
+        "note": "Megjegyzés:",
+        "description": "Ez az ütemezés irányadó jellegű, és a projekt bonyolultságától függően eltérhet. Minden fázis során rendszeres frissítések és egyeztetések történnek, hogy a végeredmény pontosan megfeleljen az elképzeléseidnek."
+    },
+    "pricingfooter": {
+        "description": "Ha kérdésed van, vagy egyedi ajánlatra van szükséged, bátran keress meg.",
+        "title": "Várom a közös munkát!",
+        "regards": "Üdvözlettel,"
     }
 }

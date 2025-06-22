@@ -235,5 +235,62 @@
             },
             "quote": "First, you have to finish"
         }
+    },
+    "pricing": {
+        "title": "Pricing & Services",
+        "description": "Transparent pricing for quality web development services. Choose the package that best fits your project needs.",
+        "basic": {
+            "title": "Basic Website",
+            "description": "Perfect for small businesses and personal portfolios",
+            "features": "Responsive Design, Home + 404 Page, Contact Form, Basic SEO, Mobile Optimization, 3 Months Support, 3 Revisions"
+        },
+        "advanced": {
+            "title": "Advanced Web App",
+            "description": "Full-featured web applications with custom functionality",
+            "features": "Responsive Design, Up to 5 Pages, Advanced SEO, Mobile Optimization, Performance Optimization, 6 Months Support, 8 Revisions",
+            "note": "Everything is included from the Basic Website package"
+        },
+        "custom": {
+            "title": "Custom Solutions",
+            "description": "Large-scale applications with complex requirements",
+            "features": "Custom Development, Database Integration, User Authentication, Up to 5 Pages, Admin Dashboard, API Integration, 6 Months Support, Performance Optimization, 5 Revisions",
+            "note": "Everything is included from the Advanced Website package"
+        },
+        "popular": "Most Popular",
+        "started": "Get Started",
+        "note": "Note:",
+        "services": "Additional Services",
+        "notes": "All prices are estimates and may vary based on project complexity and requirements. Contact me for a detailed quote tailored to your specific needs. Upfront payment is required to start the project, with a 25% deposit and the remaining balance due upon completion.",
+        "add_services": {
+            "main": "Website maintenance",
+            "extra": "Extra pages",
+            "admin": "Domain administration",
+            "service": "Existing website redesign"
+        },
+        "month": "month",
+        "page": "page"
+    },
+    "timeline": {
+        "title": "Timeline",
+        "weeks": {
+            "week1": "Week 1",
+            "week2": "Week 2",
+            "week12": "Week 1-2",
+            "week3": "Week 3",
+            "week23": "Week 2-3",
+            "week4": "Week 4"
+        },
+        "steps": {
+            "step1": "Design Phase",
+            "step2": "Development Phase",
+            "step3": "QA & Testing Phase"
+        },
+        "note": "Note:",
+        "description": "This timeline is a general guideline and may vary based on project complexity and requirements. Each phase includes regular updates and client feedback sessions to ensure alignment with your vision."
+    },
+    "pricingfooter": {
+        "description": "If you have any questions or need a custom quote, feel free to reach out.",
+        "title": "Looking forward to working together!",
+        "regards": "Best regards,"
     }
 }

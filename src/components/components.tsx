@@ -965,73 +965,50 @@ export const WorksPage = () => {
 };
 
 export const Prices = () => {
+
+    const t = useTranslations('pricing');
+
     const services = [
         {
-            title: "Basic Website",
-            price: "€499",
-            description: "Perfect for small businesses and personal portfolios",
-            features: [
-                "Responsive Design",
-                "Home + 404 Page",
-                "Contact Form",
-                "Basic SEO",
-                "Mobile Optimization",
-                "3 Months Support",
-                "3 Revisions",
-            ],
+            title: t('basic.title'),
+            price: '$499',
+            description: t('basic.description'),
+            features: t('basic.features').split(', '),
             popular: false
         },
         {
-            title: "Advanced Web App",
-            price: "€1,099",
-            description: "Full-featured web applications with custom functionality",
-            features: [
-                "Responsive Design",
-                "Up to 5 Pages",
-                "Advanced SEO",
-                "Mobile Optimization",
-                "Performance Optimization",
-                "6 Months Support",
-                "8 Revisions",
-            ],
-            note: "Everything is included from the Basic Website package",
+            title: t('advanced.title'),
+            price: '$1,099',
+            description: t('advanced.description'),
+            features: t('advanced.features').split(', '),
+            note: t('advanced.note'),
             popular: true
         },
         {
-            title: "Custom Solution",
-            price: "€?,???",
-            description: "Large-scale applications with complex requirements",
-            features: [
-                "Custom Development",
-                "Database Integration",
-                "User Authentication",
-                "Up to 5 Pages",
-                "Admin Dashboard",
-                "API Integration",
-                "6 Months Support",
-                "Performance Optimization",
-                "5 Revisions",
-            ],
+            title: t('custom.title'),
+            price: '$?,???',
+            description: t('custom.description'),
+            features: t('custom.features').split(', '),
             popular: false,
-            note: "Everything is included from the Advanced Website package",
+            note: t('custom.note'),
         }
     ];
 
     const additionalServices = [
         {
-            service: "Website Maintenance",
-            price: "€50/month"
+            service: t('add_services.main'),
+            price: "€50/"+t('month')
         },
         {
-            service: "Extra Page",
-            price: "€30/page"
+            service: t('add_services.extra'),
+            price: "€30/"+t('page')
         },
         {
-            service: "Domain administration",
+            service: t('add_services.admin'),
             price: "€50"
         },
         {
-            service: "Existing website redesign",
+            service: t('add_services.service'),
             price: "€500"
         },
     ];
@@ -1040,10 +1017,9 @@ export const Prices = () => {
         <div className="text-white min-h-screen pt-16">
             <div className="max-w-6xl mx-auto px-6 py-20">
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl font-bold mb-6">Pricing & Services</h1>
+                    <h1 className="text-5xl font-bold mb-6">{t('title')}</h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Transparent pricing for quality web development services.
-                        Choose the package that best fits your project needs.
+                        {t('description')}
                     </p>
                 </div>
 
@@ -1057,7 +1033,7 @@ export const Prices = () => {
                             {service.popular && (
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                                     <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                                        Most Popular
+                                        {t('popular')}
                                     </span>
                                 </div>
                             )}
@@ -1086,13 +1062,13 @@ export const Prices = () => {
                                     : 'border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white'
                                     }`}
                             >
-                                Get Started
+                                {t('started')}
                             </Link>
 
                             {
                                 service.note &&
                                 <p className="text-sm text-gray-400 mt-4 gap-1 text-center">
-                                    <span className="text-blue-400 font-semibold me-1">Note:</span>
+                                    <span className="text-blue-400 font-semibold me-1">{t('note')}</span>
                                     {service.note}
                                 </p>
                             }
@@ -1102,7 +1078,7 @@ export const Prices = () => {
 
                 {/* Additional Services */}
                 <div className="mt-20 text-center">
-                    <h2 className="text-3xl font-bold mb-8">Additional Services</h2>
+                    <h2 className="text-3xl font-bold mb-8">{t('services')}</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {additionalServices.map((item, index) => (
                             <div key={index} className="bg-gray-800 p-6 rounded-lg">
@@ -1114,7 +1090,7 @@ export const Prices = () => {
                 </div>
 
                 <p className="italic text-gray-400 mt-8 text-center md:text-lg text-xs">
-                    <span className="text-blue-400 font-semibold">Note:</span> All prices are estimates and may vary based on project complexity and requirements. Contact me for a detailed quote tailored to your specific needs. Upfront payment is required to start the project, with a <b>25%</b> deposit and the remaining balance due upon completion.
+                    <span className="text-blue-400 font-semibold">{t('note')}</span> {t('notes')}
                 </p>
             </div>
         </div>
@@ -1122,20 +1098,21 @@ export const Prices = () => {
 };
 
 export const TimeLine = () => {
+    const t = useTranslations('timeline');
     return (
         <div className="p-8">
             <div className="max-w-6xl mx-auto">
                 {/* Timeline Title */}
-                <h1 className="text-white text-3xl font-bold mb-8 mb-12 text-center w-full">Timeline</h1>
+                <h1 className="text-white text-3xl font-bold mb-8 mb-12 text-center w-full">{t('title')}</h1>
 
                 {/* Timeline Container */}
                 <div className="hidden md:block relative bg-linear-to-b from-gray-800/50 to-transparent rounded-t-4xl p-8 ">
                     {/* Week Headers */}
                     <div className="grid grid-cols-4 gap-4 mb-8">
-                        <div className="text-white text-lg font-medium text-center">Week 1</div>
-                        <div className="text-white text-lg font-medium text-center">Week 2</div>
-                        <div className="text-white text-lg font-medium text-center">Week 3</div>
-                        <div className="text-white text-lg font-medium text-center">Week 4</div>
+                        <div className="text-white text-lg font-medium text-center">{t('weeks.week1')}</div>
+                        <div className="text-white text-lg font-medium text-center">{t('weeks.week2')}</div>
+                        <div className="text-white text-lg font-medium text-center">{t('weeks.week3')}</div>
+                        <div className="text-white text-lg font-medium text-center">{t('weeks.week4')}</div>
                     </div>
 
                     {/* Timeline Grid */}
@@ -1149,21 +1126,21 @@ export const TimeLine = () => {
                         {/* Design Phase - Week 1 */}
                         <div className="absolute left-0 top-8 w-1/4 pr-2">
                             <div className="bg-purple-800/50 hover:bg-purple-800/80 ring-2 ring-purple-600 transition-colors duration-300 rounded-full px-6 py-4 text-white text-center font-medium shadow-lg">
-                                Design Phase
+                                {t('steps.step1')}
                             </div>
                         </div>
 
                         {/* Development Phase - Week 2-3 */}
                         <div className="absolute left-1/4 top-20 w-2/4 px-2">
                             <div className="bg-amber-800/50 hover:bg-amber-700/60 ring-2 ring-amber-600 transition-colors duration-300 rounded-full px-8 py-4 text-white text-center font-medium shadow-lg">
-                                Development Phase
+                                {t('steps.step2')}
                             </div>
                         </div>
 
                         {/* QA & Testing Phase - Week 4 */}
                         <div className="absolute right-0 top-32 w-1/4 pl-2">
                             <div className="bg-green-800/50 hover:bg-green-800/80 ring-2 ring-green-600 transition-colors duration-300 rounded-full px-6 py-4 text-white text-center font-medium shadow-lg">
-                                QA & Testing
+                                {t('steps.step3')}
                             </div>
                         </div>
                     </div>
@@ -1174,32 +1151,32 @@ export const TimeLine = () => {
                     <div className="space-y-4">
                         {/* Design Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h3 className="text-white text-lg font-medium text-center">Week 1 - 2</h3>
+                            <h3 className="text-white text-lg font-medium text-center">{t('weeks.week12')}</h3>
                             <div className="bg-purple-800/50 hover:bg-purple-800/80 ring-4 ring-purple-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
-                                Design Phase
+                                {t('steps.step1')}
                             </div>
                         </div>
 
                         {/* Development Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h3 className="text-white text-lg font-medium text-center">Week 2 - 3</h3>
+                            <h3 className="text-white text-lg font-medium text-center">{t('weeks.week23')}</h3>
                             <div className="bg-amber-800/50 hover:bg-amber-700/60 ring-4 ring-amber-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
-                                Development Phase
+                                {t('steps.step2')}
                             </div>
                         </div>
 
                         {/* QA & Testing Phase */}
                         <div className="border border-gray-700 bg-gray-800/50 rounded-2xl w-full flex flex-col justify-center pt-4 p-3 gap-4">
-                            <h3 className="text-white text-lg font-medium text-center">Week 4</h3>
+                            <h3 className="text-white text-lg font-medium text-center">{t('weeks.week4')}</h3>
                             <div className="bg-green-800/50 hover:bg-green-800/80 ring-4 ring-green-600 transition-colors duration-300 rounded-full px-6 py-2 text-white text-center font-medium shadow-lg">
-                                QA & Testing
+                                {t('steps.step3')}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <p className="italic text-gray-400 mt-8 text-center md:text-lg text-xs">
-                    <span className="text-blue-400 font-semibold">Note:</span> This timeline is a general guideline and may vary based on project complexity and requirements. Each phase includes regular updates and client feedback sessions to ensure alignment with your vision.
+                    <span className="text-blue-400 font-semibold">{t('note')}</span> {t('description')}
                 </p>
             </div>
         </div>
@@ -1207,16 +1184,17 @@ export const TimeLine = () => {
 };
 
 export const PricingFooter = () => {
+    const t = useTranslations('pricingfooter');
     return (
         <div className="mt-20 text-center">
 
             <p className="text-lg text-gray-400 mb-8">
-                If you have any questions or need a custom quote, feel free to reach out.
+                {t('description')}
             </p>
             <h2 className="text-3xl font-bold mb-8">
-                Looking forward to working together!
+                {t('title')}
             </h2>
-            <h4 className="text-xl font-bold">Best regards,</h4>
+            <h4 className="text-xl font-bold">{t('regards')}</h4>
             <h3 className="text-5xl handwritten text-gray-100">Rozs Norbert</h3>
         </div>
     );
