@@ -160,7 +160,7 @@ export const Navigation = () => {
     const navItems = [
         { name: t('works'), path: "/works" },
         { name: t('about'), path: "/about" },
-        { name: t('experience'), path: "#experience" },
+        { name: t('experience'), path: location.includes('/works') ? "/works#experience" : "/about#experience" },
         { name: t('pricing'), path: "/pricing" },
     ];
 
