@@ -667,7 +667,7 @@ export const FAQ = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-bold mb-16 text-center"
                 >
-                   {t('title')}
+                    {t('title')}
                 </motion.h2>
 
                 <div className="space-y-4">
@@ -1228,7 +1228,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        projectType: '',
+        type: '',
         message: ''
     });
 
@@ -1250,13 +1250,22 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            // setSubmitMessage(t('form.success'));
+        const res = await fetch('/api/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+
+        if (res.ok) {
+            setSubmitMessage(t('form.success'));
+            setIsError(false);
+        } else {
             setIsError(true);
-            setIsSubmitting(false);
-            setFormData({ name: '', email: '', projectType: '', message: '' });
-        }, 1000);
+        }
+        setIsSubmitting(false);
+        setFormData({ name: '', email: '', type: '', message: '' });
     };
 
     return (
@@ -1327,13 +1336,13 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
                         {/* Project Type Select */}
                         <div>
-                            <label htmlFor="projectType" className="block text-white text-sm font-medium mb-2">
+                            <label htmlFor="type" className="block text-white text-sm font-medium mb-2">
                                 {t('form.type')} *
                             </label>
                             <select
-                                id="projectType"
-                                name="projectType"
-                                value={formData.projectType}
+                                id="type"
+                                name="type"
+                                value={formData.type}
                                 onChange={handleInputChange}
                                 required
                                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
