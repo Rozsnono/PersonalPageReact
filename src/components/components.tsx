@@ -162,10 +162,11 @@ export const Navigation = () => {
         { name: t('about'), path: "/about" },
         { name: t('experience'), path: location.includes('/about') ? "/about#experience" : "/#experience" },
         { name: t('pricing'), path: "/pricing" },
+        { name: t('contact'), path: "/contact", customClass: "font-medium bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-300 transition-colors text-center" },
     ];
 
     return (
-        <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-gray-800">
+        <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-gray-800 z-[100]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
@@ -174,20 +175,16 @@ export const Navigation = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-8 text-sm ">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
-                                href={item.path} className={`text-sm font-medium transition-colors hover:text-blue-400 ${location === item.path ? "text-blue-400" : "text-gray-300"
-                                    }`}
+                                href={item.path} className={item.customClass || `text-sm font-medium transition-colors hover:text-blue-400 ${location === item.path ? "text-blue-400" : "text-gray-300"}`}
                             >
                                 {item.name}
 
                             </a>
                         ))}
-                        <a href="/contact" className="text-sm font-medium bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-300 transition-colors">
-                            {t('contact')}
-                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -208,21 +205,22 @@ export const Navigation = () => {
                     {isOpen && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
+                            animate={{ opacity: 1, height: "94vh" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-gray-800 rounded-lg mt-2 mb-4"
+                            className="md:hidden rounded-lg mt-2 mb-4 flex justify-center items-center"
                         >
-                            <div className="py-4 space-y-2">
+                            <div className="py-4 space-y-2 flex flex-col justify-between gap-6 font-bold text-xl">
                                 {navItems.map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.path}
-                                        className="block px-4 py-2 text-sm text-gray-300 hover:text-blue-400 hover:bg-gray-700 rounded"
+                                        className={item.customClass || "block px-4 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-700 rounded text-center"}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {item.name}
                                     </Link>
                                 ))}
+                                <div></div>
                             </div>
                         </motion.div>
                     )}
@@ -997,11 +995,11 @@ export const Prices = () => {
     const additionalServices = [
         {
             service: t('add_services.main'),
-            price: "€50/"+t('month')
+            price: "€50/" + t('month')
         },
         {
             service: t('add_services.extra'),
-            price: "€30/"+t('page')
+            price: "€30/" + t('page')
         },
         {
             service: t('add_services.admin'),
