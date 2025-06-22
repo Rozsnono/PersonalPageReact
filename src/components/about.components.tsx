@@ -238,6 +238,7 @@ export const Jobs = () => {
             description: t('tiwala.description'),
             skills: t('tiwala.skills').split(', '),
             color: 'blue',
+            hex: '#51a2ff',
             direction: 'left'
         },
         {
@@ -247,6 +248,7 @@ export const Jobs = () => {
             description: t('integrity.description'),
             skills: t('integrity.skills').split(', '),
             color: 'green',
+            hex: '#05df72',
             direction: 'right'
         },
         {
@@ -256,6 +258,7 @@ export const Jobs = () => {
             description: t('freelance.description'),
             skills: t('freelance.skills').split(', '),
             color: 'purple',
+            hex: '#c27aff',
             direction: 'left'
         }
     ]
@@ -288,7 +291,7 @@ export const Jobs = () => {
                                 viewport={{ once: true }}
                                 className={`bg-gray-800/50 p-6 rounded-lg border border-gray-700 relative ${job.direction === 'right' ? 'md:ml-auto' : ''}`}
                             >
-                                <div className={`absolute -left-3 top-6 w-6 h-6 bg-${job.color}-500 rounded-full border-4 border-gray-900`}></div>
+                                <div style={{backgroundColor: job.hex}} className={`absolute -left-3 top-6 w-6 h-6 bg-${job.color}-500 rounded-full border-4 border-gray-900`}></div>
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                                     <div>
                                         <h3 className={`text-xl font-semibold text-${job.color}-400`}>{job.title}</h3>
