@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://rozsnorbert.vercel.app
+Host: https://rozsnorbert.hu
 
 # Sitemaps
-Sitemap: https://rozsnorbert.vercel.app/sitemap.xml
+Sitemap: https://rozsnorbert.hu/sitemap.xml

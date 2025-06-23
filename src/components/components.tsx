@@ -1,14 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronRight, ChevronDown, ChevronUp, Globe, Cookie as CookieIcon } from "lucide-react";
+import { ChevronRight, ChevronDown, ChevronUp, Globe, Cookie as CookieIcon, Lightbulb, Cross, Hourglass } from "lucide-react";
 import Link from "next/link";
 import Cookie from 'js-cookie';
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from 'next-intl';
 import { Locale } from '@/i18n/config';
 import { setUserLocale } from '../app/services/locale';
+import { getUserChat, setUserChat } from "@/app/services/chat";
 
 export const Ticker = () => {
 
@@ -162,6 +163,7 @@ export const Navigation = () => {
         { name: t('about'), path: "/about" },
         { name: t('experience'), path: location.includes('/about') ? "/about#experience" : "/#experience" },
         { name: t('pricing'), path: "/pricing" },
+        { name: t('chat'), path: "/chat" },
         { name: t('contact'), path: "/contact", customClass: "font-medium bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-300 transition-colors text-center" },
     ];
 
@@ -834,6 +836,11 @@ export const Footer = () => {
                         <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
                         <Link href="https://github.com/Rozsnono" className="hover:text-sky-200 transition-colors">GitHub</Link>
                         <Link href="mailto:rozsnorbert39@gmail.com" className="hover:text-sky-200 transition-colors">Mail</Link>
+
+                        <Link href="https://www.instagram.com/rozs_norbert/" className="hover:text-sky-200 transition-colors hidden">Instagram</Link>
+                        <Link href="https://www.facebook.com/norbert.rozs.1" className="hover:text-sky-200 transition-colors hidden">Facebook</Link>
+                        <Link href="https://x.com/NorbertRozs" className="hover:text-sky-200 transition-colors hidden">X</Link>
+
                     </div>
                 </div>
             </div>
@@ -969,14 +976,14 @@ export const Prices = () => {
     const services = [
         {
             title: t('basic.title'),
-            price: '$499',
+            price: t('basic.price'),
             description: t('basic.description'),
             features: t('basic.features').split(', '),
             popular: false
         },
         {
             title: t('advanced.title'),
-            price: '$1,099',
+            price: t('advanced.price'),
             description: t('advanced.description'),
             features: t('advanced.features').split(', '),
             note: t('advanced.note'),
@@ -984,7 +991,7 @@ export const Prices = () => {
         },
         {
             title: t('custom.title'),
-            price: '$?,???',
+            price: t('custom.price'),
             description: t('custom.description'),
             features: t('custom.features').split(', '),
             popular: false,
@@ -995,19 +1002,19 @@ export const Prices = () => {
     const additionalServices = [
         {
             service: t('add_services.main'),
-            price: "€50/" + t('month')
+            price: t('add_services.main_price')
         },
         {
             service: t('add_services.extra'),
-            price: "€30/" + t('page')
+            price: t('add_services.extra_price')
         },
         {
             service: t('add_services.admin'),
-            price: "€50"
+            price: t('add_services.admin_price')
         },
         {
             service: t('add_services.service'),
-            price: "€500"
+            price: t('add_services.service_price')
         },
     ];
 
@@ -1246,7 +1253,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
     return (
         <div className="py-32 px-4">
-            <div className="max-w-2xl mx-auto">
+            <div className={"max-w-2xl mx-auto" + (contactPage ? ' h-[70vh]' : '')}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -1397,11 +1404,6 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
                     <p className="text-gray-400 text-xs mt-2 italic">
                         {t('spam')}
                     </p>
-                    {/* <div className="mt-4">
-                            <p className="text-gray-400 text-sm">
-                                By submitting this form, you agree to our <Link href="/privacy-policy" className="text-blue-400 hover:underline">Privacy Policy</Link>.
-                            </p>
-                        </div> */}
                 </div>
             </div>
         </div>
@@ -1524,3 +1526,254 @@ export const CookieBanner = () => {
         </motion.div>
     );
 }
+
+export const Chat = () => {
+    const t = useTranslations('chat');
+
+    const [inputMessage, setInputMessage] = useState('');
+    const [userChatNumber, setUserChatNumber] = useState(0);
+    const [isTyping, setIsTyping] = useState(false);
+    const bottomRef = useRef<HTMLDivElement | null>(null);
+    const [data, setData] = useState<{ name: null | string, email: null | string, topic: null | string, message: null | string }>({
+        name: null,
+        email: null,
+        topic: null,
+        message: null
+    });
+
+    const suggestedQuestions = [
+        t('suggested.technologies'),
+        t('suggested.experience'),
+        t('suggested.availability'),
+        t('suggested.projects'),
+        t('suggested.contact'),
+        t('suggested.skills')
+    ];
+
+    const instructions = [
+        "You are a helpful assistant in multilanguage but you need to replay in English. First the user has to give his name. You should replay with <n>Name</n>. ",
+        "You are a helpful assistant in multilanguage but you need to replay in English. The user can ask about technologies, experience, availability, projects, contact, skills, you should say: <>Topic</>. If the user asks about something that is not in the topics, just say: <>error</>, The user will ask you to help him to contact Rozs. You should response with: <>contact</>. If the user say thank you in any forms, just say: <>thanks</>. If the user asks about something else, just say: <>error</>"
+    ];
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const responses: any = {
+        greeting: t('response.greeting'),
+        name: t('response.name'),
+        technologies: t('response.technologies'),
+        experience: t('response.experience'),
+        skills: t('response.skills'),
+        availability: t('response.availability'),
+        projects: t('response.projects'),
+        contact: t('response.contact'),
+        connecting: t('response.connecting'),
+        finish: t('response.finish'),
+        error: t('response.error'),
+        else: t('response.else'),
+        thanks: t('response.thanks')
+    }
+
+    const [messages, setMessages] = useState([
+        {
+            id: 1,
+            text: responses.greeting,
+            sender: 'ai',
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+    ]);
+
+    const handleSendMessage = async () => {
+        if (!inputMessage.trim()) return;
+
+        const userMessage = {
+            id: messages.length + 1,
+            text: inputMessage,
+            sender: 'user',
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+
+        setMessages(prev => [...prev, userMessage]);
+        setInputMessage('');
+        setIsTyping(true);
+
+        await fetch('/api/ai', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: inputMessage, instructions: instructions[messages.length == 1 ? 0 : 1] }) }).then(res => {
+            if (!res.ok) {
+                throw new Error('Failed to fetch AI response');
+            }
+            return res.json();
+        }).then(data => {
+            const matchName = new RegExp('<n>((.|\n)*?)</n>').exec(data.message);
+            const matchTopic = new RegExp('<>((.|\n)*?)</>').exec(data.message.toLowerCase());
+
+            let resp;
+            if (matchName && matchName[1]) {
+                setData(prev => ({ ...prev, topic: 'name' }));
+                setData(prev => ({ ...prev, name: matchName[1] }));
+                resp = responses.name.replaceAll('<name/>', matchName[1]);
+            } else if (matchTopic && matchTopic[1]) {
+                setData(prev => ({ ...prev, topic: matchTopic[1] }));
+                resp = responses[matchTopic[1]]
+            } else {
+                setData(prev => ({ ...prev, topic: 'error' }));
+                resp = responses.error;
+            }
+            const aiResponse = {
+                id: messages.length + 2,
+                text: resp || "I'm not sure how to respond to that.",
+                sender: 'ai',
+                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages(prev => [...prev, aiResponse]);
+            if (matchTopic && !['contact', 'error', 'connecting', 'thanks'].includes(matchTopic[1])) {
+                setTimeout(() => {
+                    setMessages(prev => [...prev, {
+                        id: messages.length + 2.5,
+                        text: responses.else,
+                        sender: 'ai',
+                        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                    }]);
+                }, 1000); // Simulate typing delay
+            }
+            setIsTyping(false);
+            setUserChatNumber(prev => prev + 1);
+            setUserChat((userChatNumber + 1).toString(), new Date());
+        });
+    };
+
+    const handleSuggestedQuestion = (question: string) => {
+        setInputMessage(question);
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleKeyPress = (e: any) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSendMessage();
+            e.target.blur();
+        }
+    };
+
+    useEffect(() => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+        getUserChat().then(chat => {
+            if (chat === '0') {
+                setUserChatNumber(0);
+            } else if (new Date(new RegExp('<d>((.|\n)*?)</d>').exec(chat)![1]).getDate() == new Date().getDate()) {
+                setUserChatNumber(parseInt(new RegExp('<c>((.|\n)*?)</c>').exec(chat)![1]));
+            }
+        });
+    }, [messages]);
+
+    return (
+        <div className="min-h-screen text-white">
+            {/* Chat Interface */}
+            <div className="pt-20 pb-4 px-4 h-screen flex flex-col">
+                <div className="max-w-4xl mx-auto w-full flex flex-col h-full">
+                    {/* Chat Header */}
+                    <div className="bg-gray-800/50 rounded-t-lg border border-gray-700 p-4 flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold">RN</span>
+                        </div>
+                        <div>
+                            <h2 className="font-semibold text-white">{t('title')}</h2>
+                            <p className="text-sm text-green-400 flex items-center">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                                {t('online')}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Messages Area */}
+                    <div className="flex-1 bg-gray-800/30 border-x border-gray-700 p-4 overflow-y-auto overflow-x-hidden h-full">
+                        <div className="space-y-4 h-full flex flex-col ">
+                            {messages.map((message) => (
+                                <motion.div
+                                    initial={{ opacity: 0, x: message.sender === 'user' ? -20 : 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    key={message.id}
+                                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                    <div className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${message.sender === 'user'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'bg-gray-700 text-gray-100'
+                                        }`}>
+                                        <p className="text-sm">{message.text}</p>
+                                        <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-blue-200' : 'text-gray-400'
+                                            }`}>
+                                            {message.timestamp}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+
+                            {/* Typing Indicator */}
+                            {isTyping && (
+                                <div className="flex justify-start">
+                                    <div className="bg-gray-700 text-gray-100 max-w-xs lg:max-w-md px-4 py-2 rounded-lg">
+                                        <div className="flex space-x-1">
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            <div ref={bottomRef} />
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-800/30 border-x border-gray-700 p-1"></div>
+
+
+                    {/* Suggested Questions */}
+                    {!['contact', 'connecting', 'thanks'].includes(data.topic || 'contact') && (
+                        <div className="bg-gray-800/30 border-x border-gray-700 p-4">
+                            <p className="text-sm text-gray-400 mb-3 flex items-center gap-1"><Lightbulb className="text-yellow-400 font-bold" size={14} /> {t('try_asking')}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {suggestedQuestions.map((question, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => handleSuggestedQuestion(question)}
+                                        className="text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 px-3 py-2 rounded-full transition-colors"
+                                    >
+                                        {question}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {userChatNumber >= 10 && (
+                        <div className="bg-gray-800/30 border-x border-gray-700 p-4">
+                            <p className="text-sm text-gray-400 flex items-center gap-1"><Hourglass className="text-sky-400 font-bold" size={14} /> {t('too_much_messages')}</p>
+                        </div>
+                    )}
+
+                    {/* Input Area */}
+                    <div className="bg-gray-800/50 rounded-b-lg border border-gray-700 p-4">
+                        <div className="flex space-x-3">
+                            <input
+                                type="text"
+                                value={inputMessage}
+                                onChange={(e) => setInputMessage(e.target.value)}
+                                onKeyDown={handleKeyPress}
+                                placeholder={t('message')}
+                                className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                                disabled={isTyping || userChatNumber >= 10}
+                            />
+                            <button
+                                onClick={handleSendMessage}
+                                disabled={!inputMessage.trim() || isTyping}
+                                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                            >
+                                {t('send')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};

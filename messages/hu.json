@@ -5,6 +5,7 @@
         "experience": "Tapasztalat",
         "faq": "GYIK",
         "pricing": "Árak",
+        "chat": "Csevegés",
         "contact": "Kapcsolatfelvétel"
     },
     "hero": {
@@ -241,17 +242,20 @@
         "description": "Átlátható árképzés minőségi webfejlesztési szolgáltatásokhoz. Válaszd ki a csomagot, ami legjobban illik a projektedhez.",
         "basic": {
             "title": "Alap Weboldal",
+            "price": "200 000 Ft",
             "description": "Tökéletes kisvállalkozásoknak és személyes portfóliókhoz",
             "features": "Reszponzív dizájn, Kezdőlap + 404 oldal, Kapcsolati űrlap, Alap SEO, Mobilra optimalizált, 3 hónap támogatás, 3 módosítási lehetőség"
         },
         "advanced": {
             "title": "Haladó Webalkalmazás",
+            "price": "450 000 Ft",
             "description": "Teljes funkcionalitású webalkalmazások egyedi funkciókkal",
             "features": "Reszponzív dizájn, Legfeljebb 5 oldal, Haladó SEO, Mobil optimalizálás, Teljesítményoptimalizálás, 6 hónap támogatás, 8 módosítás",
             "note": "Tartalmazza az Alap Weboldal csomag minden elemét"
         },
         "custom": {
             "title": "Egyedi Megoldások",
+            "price": "??? ??? Ft",
             "description": "Nagyobb léptékű alkalmazások összetett igényekkel",
             "features": "Egyedi fejlesztés, Adatbázis integráció, Felhasználó hitelesítés, Legfeljebb 5 oldal, Admin felület, API integráció, 6 hónap támogatás, Teljesítmény optimalizálás, 5 módosítás",
             "note": "Tartalmazza a Haladó Weboldal csomag minden elemét"
@@ -263,12 +267,14 @@
         "notes": "Az árak tájékoztató jellegűek, a projekt összetettségétől függően változhatnak. Kérj egyedi árajánlatot az igényeidhez igazítva. A projekt elindításához előleg szükséges: 25%, a fennmaradó rész az elkészüléskor esedékes.",
         "add_services": {
             "main": "Weboldal karbantartás",
+            "main_price": "20 000 Ft/hó",
             "extra": "További oldalak",
+            "extra_price": "40 000 Ft/oldal",
             "admin": "Domain ügyintézés",
-            "service": "Meglévő weboldal újratervezése"
-        },
-        "month": "hónap",
-        "page": "oldal"
+            "admin_price": "40 000 Ft/év",
+            "service": "Meglévő weboldal újratervezése",
+            "service_price": "100 000 Ft"
+        }
     },
     "timeline": {
         "title": "Ütemezés",
@@ -292,5 +298,36 @@
         "description": "Ha kérdésed van, vagy egyedi ajánlatra van szükséged, bátran keress meg.",
         "title": "Várom a közös munkát!",
         "regards": "Üdvözlettel,"
+    },
+    "chat": {
+        "title": "Rozs Norbert AI Asszisztens",
+        "online": "Online - Készen állok segíteni!",
+        "response": {
+            "greeting": "Szia! 👋 Örülök, hogy itt vagy! Szívesen segítek többet megtudni Norbiról. Kérdezhetsz a képességeiről, tapasztalatairól, elérhetőségéről vagy a projektekről, amiken dolgozik. Hogy szólíthatlak?",
+            "name": "Szia <name/>! Örülök, hogy segíthetek. Miben lehetek a segítségedre? 😊",
+            "technologies": "Norbi a modern webes technológiák szakértője! Kedvencei közé tartozik a React ⭐, Next.js ⭐, TypeScript ⭐, Node.js és a Tailwind CSS. Emellett tapasztalt Angular, Vue.js, MongoDB és C# használatában is. Szenvedélye a legújabb frontend keretrendszerek! ",
+            "experience": "Norbi több mint 5 év tapasztalattal rendelkezik, és már 50+ projektet vitt végig! Jelenleg Frontend fejlesztőként dolgozik a Tiwala Solution Kft.-nél, korábban Full-stack fejlesztő volt az Integrity Kft.-nél, és 2020 óta szabadúszóként is tevékenykedik. Szenvedéllyel alkot egyedi megoldásokat! 🚀",
+            "skills": "Norbi sokféle technológiában jártas! Kiemelkedően ért a React, Next.js, TypeScript, Node.js, Tailwind CSS, Angular, Vue.js, MongoDB és C# használatához. Különösen figyel webes teljesítményoptimalizálásra és reszponzív designra. Szenvedélye a modern felhasználói élmény megalkotása! 💻",
+            "availability": "Norbi mindig nyitott izgalmas új projektekre! Bár főállásban dolgozik, szívesen vállal olyan szabadúszó munkákat, amelyek illenek a webfejlesztés iránti szenvedélyéhez. Nyugodtan küldd el a projekt részleteit!",
+            "projects": "Norbi különféle projekteken dolgozik – üzleti weboldalaktól és e-kereskedelmi áruházaktól kezdve webalkalmazásokig és egyedi megoldásokig. Specialitása a reszponzív design, teljesítményoptimalizálás és modern felhasználói élmények megteremtése. Minden projektet precízen valósít meg! ✨",
+            "contact": "Közvetlenül is felveheted a kapcsolatot Norbival az űrlapján keresztül — általában 24 órán belül válaszol. Valódi projektmegkeresések esetén ingyenes konzultációt is biztosít. 📧",
+            "connecting": "Csak írd meg, mit szeretnél megosztani Norbival — én pedig rögtön továbbítom neki! 😊",
+            "finish": "Köszönöm a beszélgetést! Ha bármilyen további kérdésed van vagy segítségre van szükséged, bátran szólj. Szép napot kívánok! 😊",
+            "error": "Sajnálom, de ezt nem teljesen értettem. Meg tudnád másképp fogalmazni a kérdésed?",
+            "else": "Segíthetek még valamiben? Ha szeretnél többet megtudni Norbi képességeiről, tapasztalatairól vagy projektjeiről, csak kérdezz bátran! 😊",
+            "thanks": "Szívesen! Ha van még kérdésed vagy segítségre van szükséged, csak szólj. Szép napot kívánok! 😊"
+        },
+        "try_asking": "Próbáld meg ezzel:",
+        "too_much_messages": "Úgy tűnik, túl sok üzenetet küldtél egy nap alatt. Kérlek, próbáld újra holnap.",
+        "suggested": {
+            "technologies": "Milyen technológiákban jártas Norbi?",
+            "experience": "Mennyi tapasztalata van Norbinak?",
+            "skills": "Milyen készségei vannak Norbinak?",
+            "availability": "Ráér új projektekre Norbi?",
+            "projects": "Milyen típusú projekteken dolgozik Norbi?",
+            "contact": "Hogyan tudok kapcsolatba lépni Norbival?"
+        },
+        "message": "Írd ide az üzeneted...",
+        "send": "Küldés"
     }
 }

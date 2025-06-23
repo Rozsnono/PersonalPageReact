@@ -5,8 +5,9 @@ export default function Home() {
     <div className="App text-white min-h-screen">
       <Navigation />
       <>
-        <ContactForm contactPage/>
-        <Footer />
+        {/* <ContactForm contactPage/> */}
+        <Chat />
+        {/* <Footer /> */}
       </>
     </div>
   );

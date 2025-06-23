@@ -5,6 +5,7 @@
         "experience": "Experience",
         "faq": "FAQ",
         "pricing": "Pricing",
+        "chat": "Chat",
         "contact": "Get in Touch"
     },
     "hero": {
@@ -241,17 +242,20 @@
         "description": "Transparent pricing for quality web development services. Choose the package that best fits your project needs.",
         "basic": {
             "title": "Basic Website",
+            "price": "€499",
             "description": "Perfect for small businesses and personal portfolios",
             "features": "Responsive Design, Home + 404 Page, Contact Form, Basic SEO, Mobile Optimization, 3 Months Support, 3 Revisions"
         },
         "advanced": {
             "title": "Advanced Web App",
+            "price": "€1,099",
             "description": "Full-featured web applications with custom functionality",
             "features": "Responsive Design, Up to 5 Pages, Advanced SEO, Mobile Optimization, Performance Optimization, 6 Months Support, 8 Revisions",
             "note": "Everything is included from the Basic Website package"
         },
         "custom": {
             "title": "Custom Solutions",
+            "price": "€?,???",
             "description": "Large-scale applications with complex requirements",
             "features": "Custom Development, Database Integration, User Authentication, Up to 5 Pages, Admin Dashboard, API Integration, 6 Months Support, Performance Optimization, 5 Revisions",
             "note": "Everything is included from the Advanced Website package"
@@ -263,12 +267,14 @@
         "notes": "All prices are estimates and may vary based on project complexity and requirements. Contact me for a detailed quote tailored to your specific needs. Upfront payment is required to start the project, with a 25% deposit and the remaining balance due upon completion.",
         "add_services": {
             "main": "Website maintenance",
+            "main_price": "€49/month",
             "extra": "Extra pages",
+            "extra_price": "€99/page",
             "admin": "Domain administration",
-            "service": "Existing website redesign"
-        },
-        "month": "month",
-        "page": "page"
+            "admin_price": "€99/year",
+            "service": "Existing website redesign",
+            "service_price": "€249"
+        }
     },
     "timeline": {
         "title": "Timeline",
@@ -292,5 +298,36 @@
         "description": "If you have any questions or need a custom quote, feel free to reach out.",
         "title": "Looking forward to working together!",
         "regards": "Best regards,"
+    },
+    "chat": {
+        "title": "Rozs Norbert AI Assistant",
+        "online": "Online - Ready to help!",
+        "response": {
+            "greeting": "Hi there! 👋 I'm here to help you learn more about Rozs Norbert. You can ask me about his skills, experience, availability, or the types of projects he works on. How can I call you?",
+            "name": "Hi <name/>! I'm glad to assist you. What can I do for you? 😊",
+            "technologies": "Rozs specializes in modern web technologies! His favorites include React ⭐, Next.js ⭐, TypeScript ⭐, Node.js, and Tailwind CSS. He's also experienced with Angular, Vue.js, MongoDB, and C#. He loves working with the latest frontend frameworks!",
+            "experience": "Rozs has 5+ years of experience and has completed 50+ projects! He currently works as a Frontend Developer at Tiwala Solution Kft., previously worked as a Full-stack Developer at Integrity Kft., and has been freelancing since 2020. He's passionate about creating custom solutions! 🚀",
+            "skills": "Rozs is skilled in a variety of technologies! He has expertise in React, Next.js, TypeScript, Node.js, Tailwind CSS, Angular, Vue.js, MongoDB, and C#. He's also proficient in web performance optimization and responsive design. His passion lies in crafting modern user experiences! 💻",
+            "availability": "Rozs is always interested in exciting new projects! While he works full-time, he takes on freelance projects that align with his passion for web development. Feel free to reach out with your project details!",
+            "projects": "Rozs works on a variety of projects - from business websites and e-commerce stores to web applications and custom solutions. He specializes in responsive design, performance optimization, and modern user experiences. Every project is crafted with precision! ✨",
+            "contact": "You can reach Rozs directly via his contact form — he typically replies within 24 hours. For genuine project inquiries, he offers free consultations. 📧",
+            "connecting": "Just let me know what you'd like to share with Rozs — I’ll pass it along to him right away! 😊",
+            "finish": "Thank you for chatting with me! If you have any more questions or need assistance, feel free to ask. Have a great day! 😊",
+            "error": "I'm sorry, but I didn't quite understand that. Could you please rephrase your question?",
+            "else": "Could I help you with something else? If you have any questions about Rozs's skills, experience, or projects, feel free to ask! 😊",
+            "thanks": "You're welcome! If you have any more questions or need assistance, feel free to ask. Have a great day! 😊"
+        },
+        "try_asking": "Try asking:",
+        "too_much_messages": "Too many messages sent in one day. Please try again tomorrow.",
+        "suggested": {
+            "technologies": "What technologies does Rozs specialize in?",
+            "experience": "How much experience does Rozs have?",
+            "skills": "What skills does Rozs have?",
+            "availability": "Is Rozs available for new projects?",
+            "projects": "What types of projects does Rozs work on?",
+            "contact": "How can I contact Rozs?"
+        },
+        "message": "Type your message here...",
+        "send": "Send"
     }
 }

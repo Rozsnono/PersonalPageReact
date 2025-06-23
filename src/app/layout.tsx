@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rozs Norbert - Web Developer",
     description: "Tailor-made websites crafted with precision and creativity. Premium quality design, fast performance, and modern code for your business success.",
-    url: "https://rozs-norbert.vercel.app",
+    url: "https://rozs-norbert.hu",
     siteName: "Rozs Norbert - Web Developer",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://rozs-norbert.vercel.app",
+    canonical: "https://rozs-norbert.hu",
   },
   keywords: [
     "Norbert Rozs",
@@ -135,7 +135,7 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Rozs Norbert - Web Developer",
-  "url": "https://rozsnorbert.vercel.app",
+  "url": "https://rozsnorbert.hu",
   "sameAs": [
     "https://www.linkedin.com/in/rozs-norbert",
     "https://github.com/rozsnorbert"
@@ -161,7 +161,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-        <link rel="canonical" href="https://rozsnorbert.vercel.app" />
+        <link rel="canonical" href="https://rozsnorbert.hu" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} ${sriracha.variable} antialiased`}
