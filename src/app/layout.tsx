@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     siteName: "Rozs Norbert - Web Developer",
     images: [
       {
-        url: "/logo.png",
-        width: 1024,
-        height: 1024,
+        url: "https://rozs-norbert.hu/logo.png",
+        width: 256,
+        height: 256,
         alt: "Rozs Norbert - Web Developer",
       },
     ],
