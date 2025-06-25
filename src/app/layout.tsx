@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Freehand, Sriracha } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
@@ -173,6 +174,7 @@ export default async function RootLayout({
           <LanguageSelector />
           <CookieBanner />
         </NextIntlClientProvider>
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
