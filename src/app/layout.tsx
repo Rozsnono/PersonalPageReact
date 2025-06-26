@@ -134,7 +134,7 @@ export const metadata: Metadata = {
 
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "WebSite",
   "name": "Rozs Norbert - Web Developer",
   "url": "https://rozsnorbert.hu",
   "image": "https://rozsnorbert.hu/logo.png",
@@ -146,6 +146,11 @@ const schemaData = {
   "worksFor": {
     "@type": "Organization",
     "name": "..."
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://rozsnorbert.hu/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
   }
 };
 
