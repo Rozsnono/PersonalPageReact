@@ -137,6 +137,7 @@ const schemaData = {
   "@type": "Person",
   "name": "Rozs Norbert - Web Developer",
   "url": "https://rozsnorbert.hu",
+  "image": "https://rozsnorbert.hu/logo.png",
   "sameAs": [
     "https://www.linkedin.com/in/rozs-norbert",
     "https://github.com/rozsnorbert"

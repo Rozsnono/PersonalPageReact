@@ -156,6 +156,17 @@ export const Ticker = () => {
 export const Navigation = () => {
     const location = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden'; // Disable scrolling when menu is open
+        } else {
+            document.body.style.overflow = 'auto'; // Enable scrolling when menu is closed
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto'; // Cleanup on unmount
+        };
+    }, [isOpen]);
     const t = useTranslations('nav');
 
     const navItems = [
@@ -207,11 +218,11 @@ export const Navigation = () => {
                     {isOpen && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "94vh" }}
+                            animate={{ opacity: 1, height: "100vh" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden rounded-lg mt-2 mb-4 flex justify-center items-center"
+                            className="md:hidden rounded-lg -mt-16 mb-4 flex justify-center items-center"
                         >
-                            <div className="py-4 space-y-2 flex flex-col justify-between gap-6 font-bold text-xl">
+                            <div className="space-y-2 flex flex-col justify-between gap-6 font-bold text-xl">
                                 {navItems.map((item) => (
                                     <Link
                                         key={item.name}
@@ -222,7 +233,9 @@ export const Navigation = () => {
                                         {item.name}
                                     </Link>
                                 ))}
+                                <LanguageSelector mobile />
                                 <div></div>
+
                             </div>
                         </motion.div>
                     )}
@@ -1410,7 +1423,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
     );
 };
 
-export const LanguageSelector = () => {
+export const LanguageSelector = ({ mobile }: { mobile?: boolean }) => {
     const locale = useLocale();
     const [selectedLanguage, setSelectedLanguage] = useState(locale as Locale);
     const [isOpen, setIsOpen] = useState(false);
@@ -1430,9 +1443,52 @@ export const LanguageSelector = () => {
         // Example: i18n.changeLanguage(lang);
     };
 
+    if (mobile) {
+        return (
+            <motion.div
+                className="md:hidden block"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+            >
+                <div className="relative">
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        onBlur={() => setIsOpen(false)}
+                        className="px-4 p-2 gap-2 mx-auto rounded-full bg-gray-900/50 backdrop-blur-md border-2 border-gray-600 flex justify-center items-center hover:bg-gray-800/70 transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                    >
+                        <i className={`icon ${selectedLanguage}`}></i> {languages.find(lang => lang.code === selectedLanguage)?.label || 'Language'}
+                    </button>
+
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.ul
+                                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                                className="absolute left-0 bottom-14 mt-2 w-40 rounded-xl bg-gray-800 text-white shadow-xl ring-1 ring-gray-700 overflow-hidden"
+                            >
+                                {languages.map(({ code, label }) => (
+                                    <li key={code}>
+                                        <button
+                                            onClick={() => handleLanguageChange(code)}
+                                            className={`w-full text-left flex items-center gap-2 px-4 py-2 hover:bg-gray-700 transition-colors duration-200 ${selectedLanguage === code ? 'bg-gray-700 font-semibold' : 'cursor-pointer'
+                                                }`}
+                                        >
+                                            <i className={`icon ${code}`}></i>{label}
+                                        </button>
+                                    </li>
+                                ))}
+                            </motion.ul>
+                        )}
+                    </AnimatePresence>
+                </div>
+            </motion.div>
+        );
+    }
+
     return (
         <motion.div
-            className="fixed bottom-4 left-4 z-50"
+            className="fixed bottom-4 left-4 z-50 md:block hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
         >
@@ -1760,7 +1816,7 @@ export const Chat = () => {
                                 onChange={(e) => setInputMessage(e.target.value)}
                                 onKeyDown={handleKeyPress}
                                 placeholder={t('message')}
-                                className="flex-1 bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
                                 disabled={isTyping || userChatNumber >= 10}
                             />
                             <button
