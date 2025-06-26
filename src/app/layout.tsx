@@ -132,27 +132,48 @@ export const metadata: Metadata = {
   ]
 };
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Rozs Norbert - Web Developer",
-  "url": "https://rozsnorbert.hu",
-  "image": "https://rozsnorbert.hu/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/in/rozs-norbert",
-    "https://github.com/rozsnorbert"
-  ],
-  "jobTitle": "Frontend Developer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "..."
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rozs Norbert",
+    "url": "https://rozsnorbert.hu",
+    "image": "https://rozsnorbert.hu/logo.png",
+    "jobTitle": "Frontend Developer",
+    "sameAs": [
+      "https://www.linkedin.com/in/rozs-norbert",
+      "https://github.com/rozsnorbert"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Rozs Norbert - Web Developer",
+      "url": "https://rozsnorbert.hu",
+      "logo": "https://rozsnorbert.hu/logo.png"
+    }
   },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://rozsnorbert.hu/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rozs Norbert - Web Developer",
+    "url": "https://rozsnorbert.hu",
+    "logo": "https://rozsnorbert.hu/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/rozs-norbert",
+      "https://github.com/rozsnorbert"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://rozsnorbert.hu",
+    "name": "Rozs Norbert - Web Developer",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://rozsnorbert.hu/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
-};
+]
 
 export default async function RootLayout({
   children,
