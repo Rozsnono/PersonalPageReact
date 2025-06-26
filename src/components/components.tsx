@@ -184,7 +184,7 @@ export const Navigation = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2 rounded-xl overflow-hidden">
-                        <Image src={"https://rozsnorbert.hu/logo.png"} width={48} height={48} alt="Logo" priority></Image>
+                        <Image src={"/logo.png"} width={48} height={48} alt="Logo" priority></Image>
                     </Link>
 
                     {/* Desktop Navigation */}
