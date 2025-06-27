@@ -174,7 +174,7 @@ export const Navigation = () => {
         { name: t('about'), path: "/about" },
         { name: t('experience'), path: location.includes('/about') ? "/about#experience" : "/#experience" },
         { name: t('pricing'), path: "/pricing" },
-        { name: t('chat'), path: "/chat" },
+        // { name: t('chat'), path: "/chat" },
         { name: t('contact'), path: "/contact", customClass: "font-medium bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-300 transition-colors text-center" },
     ];
 
