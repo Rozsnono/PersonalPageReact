@@ -1266,7 +1266,7 @@ export const ContactForm = ({ contactPage }: { contactPage?: boolean }) => {
 
     return (
         <div className="py-32 px-4">
-            <div className={"max-w-2xl mx-auto" + (contactPage ? ' h-[70vh]' : '')}>
+            <div className={"max-w-2xl mx-auto" + (contactPage ? ' md:h-[70vh] h-screen' : '')}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
