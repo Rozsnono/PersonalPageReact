@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rozs Norbert - Web Developer",
     description: "Tailor-made websites crafted with precision and creativity. Premium quality design, fast performance, and modern code for your business success.",
-    url: "https://rozs-norbert.hu",
+    url: "https://rozsnorbert.hu",
     siteName: "Rozs Norbert - Web Developer",
     images: [
       {
-        url: "https://rozs-norbert.hu/logo.png",
-        width: 256,
-        height: 256,
+        url: "https://rozsnorbert.hu/logo.png",
+        width: 192,
+        height: 192,
         alt: "Rozs Norbert - Web Developer",
       },
     ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://rozs-norbert.hu",
+    canonical: "https://rozsnorbert.hu",
   },
   keywords: [
     "Norbert Rozs",
@@ -141,7 +141,7 @@ const schemaData = [
     "image": "https://rozsnorbert.hu/logo.png",
     "jobTitle": "Frontend Developer",
     "sameAs": [
-      "https://www.linkedin.com/in/rozs-norbert",
+      "https://www.linkedin.com/in/rozsnorbert",
       "https://github.com/rozsnorbert"
     ],
     "worksFor": {
@@ -158,7 +158,7 @@ const schemaData = [
     "url": "https://rozsnorbert.hu",
     "logo": "https://rozsnorbert.hu/logo.png",
     "sameAs": [
-      "https://www.linkedin.com/in/rozs-norbert",
+      "https://www.linkedin.com/in/rozsnorbert",
       "https://github.com/rozsnorbert"
     ]
   },

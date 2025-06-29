@@ -846,7 +846,7 @@ export const Footer = () => {
                 <div className="text-center text-gray-400 flex md:flex-row flex-col md:justify-between justify-center items-center">
                     <p>&copy; {new Date().getFullYear()} Rozs Norbert. {t('copyright')}</p>
                     <div className="flex justify-center space-x-6 mt-4">
-                        <Link href="https://www.linkedin.com/in/rozs-norbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
+                        <Link href="https://www.linkedin.com/in/rozsnorbert-7987b42a0/" className="hover:text-sky-200 transition-colors">LinkedIn</Link>
                         <Link href="https://github.com/Rozsnono" className="hover:text-sky-200 transition-colors">GitHub</Link>
                         <Link href="mailto:rozsnorbert39@gmail.com" className="hover:text-sky-200 transition-colors">Mail</Link>
 
