@@ -191,7 +191,7 @@ export default async function RootLayout({
         />
         <link rel="canonical" href="https://rozsnorbert.hu" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://rozsnorbert.hu/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} ${sriracha.variable} antialiased`}
