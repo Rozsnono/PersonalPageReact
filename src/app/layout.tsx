@@ -138,7 +138,7 @@ const schemaData = [
     "@type": "Person",
     "name": "Rozs Norbert",
     "url": "https://rozsnorbert.hu",
-    "image": "https://rozsnorbert.hu/logo.png",
+    "image": "https://rozsnorbert.hu/favicon.ico",
     "jobTitle": "Frontend Developer",
     "sameAs": [
       "https://www.linkedin.com/in/rozsnorbert",
@@ -148,7 +148,7 @@ const schemaData = [
       "@type": "Organization",
       "name": "Rozs Norbert - Web Developer",
       "url": "https://rozsnorbert.hu",
-      "logo": "https://rozsnorbert.hu/logo.png"
+      "logo": "https://rozsnorbert.hu/favicon.ico"
     }
   },
   {
@@ -156,7 +156,7 @@ const schemaData = [
     "@type": "Organization",
     "name": "Rozs Norbert - Web Developer",
     "url": "https://rozsnorbert.hu",
-    "logo": "https://rozsnorbert.hu/logo.png",
+    "logo": "https://rozsnorbert.hu/favicon.ico",
     "sameAs": [
       "https://www.linkedin.com/in/rozsnorbert",
       "https://github.com/rozsnorbert"
@@ -191,7 +191,7 @@ export default async function RootLayout({
         />
         <link rel="canonical" href="https://rozsnorbert.hu" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://rozsnorbert.hu/favicon.ico" />
+        <link rel="icon" type="image/ico" sizes="48x48" href="https://rozsnorbert.hu/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${freehand.variable} ${sriracha.variable} antialiased`}
