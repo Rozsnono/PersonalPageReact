@@ -96,6 +96,11 @@
             "description": "Egy gyors, böngészőalapú kártyajáték platform, ahol olyan klasszikusokat élvezhetsz, mint a Römik, UNO és a Pasziánsz. Nincs szükség letöltésre, csak tiszta játékélmény, ami bármelyik számítógépen zökkenőmentesen működik.",
             "status": "Fejlesztés alatt"
         },
+        "greennest": {
+            "title": "GreenNest – Fenntartható Élet",
+            "description": "Egy modern, reszponzív webalkalmazás, amely segít a fenntartható életmód kialakításában. Fedezd fel a zöld tippeket, kövesd nyomon a szénlábnyomodat, és csatlakozz egy közösséghez, amely elkötelezett a környezetvédelem mellett.",
+            "status": "Nézd meg magad"
+        },
         "study": {
             "title": "Tanulássegítő alkalmazás",
             "description": "Egy egyszerű webalkalmazás, amely segít a tanulási idő beosztásában és a feladatok kezelésében. Könnyen hozzáadhatod és rendszerezheted tanóráidat, és nyomon követheted a közelgő vizsgákat – mindezt egy átlátható felületen.",

@@ -876,6 +876,14 @@ export const WorksPage = () => {
             technologies: ["Next.js", "Node.js", "MongoDB"]
         },
         {
+            title: t('greennest.title'),
+            description: t('greennest.description'),
+            image: "/works/greennest.png",
+            status: t('greennest.status'),
+            link: 'https://greennest-flax.vercel.app',
+            technologies: ["Next.js", "Tailwind CSS", "TypeScript"]
+        },
+        {
             title: t('study.title'),
             description: t('study.description'),
             image: "/works/tanulas.png",
