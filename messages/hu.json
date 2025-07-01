@@ -101,6 +101,11 @@
             "description": "Egy modern, reszponzív webalkalmazás, amely segít a fenntartható életmód kialakításában. Fedezd fel a zöld tippeket, kövesd nyomon a szénlábnyomodat, és csatlakozz egy közösséghez, amely elkötelezett a környezetvédelem mellett.",
             "status": "Nézd meg magad"
         },
+        "clearbuild": {
+            "title": "ClearBuild – Renovációtól a Befejezésig",
+            "description": "A ClearBuild egy modern építőipari és felújító cég, amely megbízható, magas minőségű kivitelezést nyújt otthonok és vállalkozások számára. A tervezéstől az átadásig tartós és esztétikus tereket hozunk létre.",
+            "status": "Nézd meg magad"
+        },
         "study": {
             "title": "Tanulássegítő alkalmazás",
             "description": "Egy egyszerű webalkalmazás, amely segít a tanulási idő beosztásában és a feladatok kezelésében. Könnyen hozzáadhatod és rendszerezheted tanóráidat, és nyomon követheted a közelgő vizsgákat – mindezt egy átlátható felületen.",

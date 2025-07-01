@@ -101,6 +101,11 @@
             "description": "A modern, responsive web application that helps you adopt a sustainable lifestyle. Explore green tips, track your carbon footprint, and join a community committed to environmental protection.",
             "status": "See for yourself"
         },
+        "clearbuild": {
+            "title": "ClearBuild – Renovation to Completion",
+            "description": "ClearBuild is a modern construction and renovation company that provides reliable, high-quality execution for homes and businesses. From design to handover, we create durable and aesthetic spaces.",
+            "status": "See for yourself"
+        },
         "study": {
             "title": "Study Assistant Application",
             "description": "A straightforward web app to help you schedule study sessions and manage tasks. Easy add and organize your study hours and keep track of upcoming exams, all in one simple interface.",

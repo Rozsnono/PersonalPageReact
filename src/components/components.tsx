@@ -884,6 +884,14 @@ export const WorksPage = () => {
             technologies: ["Next.js", "Tailwind CSS", "TypeScript"]
         },
         {
+            title: t('clearbuild.title'),
+            description: t('clearbuild.description'),
+            image: "/works/clearbuild.png",
+            status: t('clearbuild.status'),
+            link: 'https://clearbuild.vercel.app',
+            technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Node.js"]
+        },
+        {
             title: t('study.title'),
             description: t('study.description'),
             image: "/works/tanulas.png",
