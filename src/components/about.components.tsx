@@ -232,6 +232,16 @@ export const Jobs = () => {
 
     const jobs = [
         {
+            title: t('erp2u.title'),
+            company: t('erp2u.company'),
+            duration: t('erp2u.duration'),
+            description: t('erp2u.description'),
+            skills: t('erp2u.skills').split(', '),
+            color: 'red',
+            hex: '#ff4d4d',
+            direction: 'left'
+        },
+        {
             title: t('tiwala.title'),
             company: t('tiwala.company'),
             duration: t('tiwala.duration'),
@@ -291,7 +301,7 @@ export const Jobs = () => {
                                 viewport={{ once: true }}
                                 className={`bg-gray-800/50 p-6 rounded-lg border border-gray-700 relative ${job.direction === 'right' ? 'md:ml-auto' : ''}`}
                             >
-                                <div style={{backgroundColor: job.hex}} className={`absolute -left-3 top-6 w-6 h-6 bg-${job.color}-500 rounded-full border-4 border-gray-900`}></div>
+                                <div style={{ backgroundColor: job.hex }} className={`absolute -left-3 top-6 w-6 h-6 bg-${job.color}-500 rounded-full border-4 border-gray-900`}></div>
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                                     <div>
                                         <h3 className={`text-xl font-semibold text-${job.color}-400`}>{job.title}</h3>

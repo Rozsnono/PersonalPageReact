@@ -91,6 +91,11 @@
     },
     "works": {
         "title": "Munkáim",
+        "catan": {
+            "title": "Catan – Online Társasjáték",
+            "description": "A klasszikus Catan társasjáték modern, böngészőalapú változata. Játssz a barátaiddal egy igényesen megtervezett felületen, amely megőrzi az eredeti játék hangulatát, miközben új funkciókkal teszi még élvezetesebbé a játékélményt.",
+            "status": "Nézd meg magad"
+        },
         "planit": {
             "title": "PlanIt – A Kártyajáték",
             "description": "Egy gyors, böngészőalapú kártyajáték platform, ahol olyan klasszikusokat élvezhetsz, mint a Römik, UNO és a Pasziánsz. Nincs szükség letöltésre, csak tiszta játékélmény, ami bármelyik számítógépen zökkenőmentesen működik.",
@@ -104,6 +109,11 @@
         "clearbuild": {
             "title": "ClearBuild – Renovációtól a Befejezésig",
             "description": "A ClearBuild egy modern építőipari és felújító cég, amely megbízható, magas minőségű kivitelezést nyújt otthonok és vállalkozások számára. A tervezéstől az átadásig tartós és esztétikus tereket hozunk létre.",
+            "status": "Nézd meg magad"
+        },
+        "gondolkodtato": {
+            "title": "Gondolkodtató – Agytorna",
+            "description": "Egy webalkalmazás, amely különféle kvízekkel teszi próbára az elmédet. Fejleszd a kognitív képességeidet és a memóriádat napi gyakorlatsorokkal.",
             "status": "Nézd meg magad"
         },
         "study": {
@@ -173,11 +183,18 @@
         "jobs": {
             "title": "Szakmai utam",
             "description": "Diákból profi fejlesztő – így fejlődtem, és ezeket értem el eddig.",
+            "erp2u": {
+                "title": "Junior Frontend Fejlesztő",
+                "company": "ERP2U Kft.",
+                "description": "Jelenleg modern, reszponzív webalkalmazások fejlesztésére fókuszálok, korszerű frontend technológiák alkalmazásával. Szorosan együttműködöm a design csapattal, hogy a kreatív elképzeléseket megvalósítsuk, miközben biztosítom az optimális felhasználói élményt és teljesítményt.",
+                "duration": "2026. január – jelenleg",
+                "skills": "Angular, TypeScript, HTML, CSS"
+            },
             "tiwala": {
                 "title": "Frontend fejlesztő",
                 "company": "Tiwala Solution Kft.",
                 "description": "Jelenleg modern, reszponzív webalkalmazások fejlesztésére fókuszálok korszerű frontend technológiák használatával. Szorosan együttműködöm a design csapattal, hogy az elképzelések életre keljenek, miközben kiemelt figyelmet fordítok a felhasználói élményre és teljesítményre.",
-                "duration": "2024. január – Jelenleg is",
+                "duration": "2024. január – 2026. január",
                 "skills": "Angular, Typescript, HTML, CSS"
             },
             "integrity": {

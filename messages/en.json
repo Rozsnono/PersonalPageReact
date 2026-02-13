@@ -91,6 +91,11 @@
     },
     "works": {
         "title": "My Works",
+        "catan": {
+            "title": "Catan - Online Board Game",
+            "description": "A modern, browser-based version of the classic board game Catan. Play with friends in a beautifully designed interface that captures the essence of the original game while adding new features for an enhanced gaming experience.",
+            "status": "See for yourself"
+        },
         "planit": {
             "title": "PlanIt - The Card Game",
             "description": "A fast, browser-based card game platform where you can enjoy classic games like Rummy, UNO, and Solitaire. No need to download, just pure gameplay designed for smooth play on any computer device.",
@@ -104,6 +109,11 @@
         "clearbuild": {
             "title": "ClearBuild – Renovation to Completion",
             "description": "ClearBuild is a modern construction and renovation company that provides reliable, high-quality execution for homes and businesses. From design to handover, we create durable and aesthetic spaces.",
+            "status": "See for yourself"
+        },
+        "gondolkodtato": {
+            "title": "Gondolkodtató - Brain Training",
+            "description": "A web application designed to challenge your mind with a variety of quizes. Improve your cognitive skills and memory with daily exercises.",
             "status": "See for yourself"
         },
         "study": {
@@ -173,11 +183,18 @@
         "jobs": {
             "title": "My Professional Journey",
             "description": "From student to professional developer - here is how I have grown and what I have accomplished along the way.",
+            "erp2u": {
+                "title": "Junior Frontend Developer",
+                "company": "ERP2U Kft.",
+                "description": "Currently focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
+                "duration": "Jan 2026 - Present",
+                "skills": "Angular, Typescript, HTML, CSS"
+            },
             "tiwala": {
                 "title": "Frontend Developer",
                 "company": "Tiwala Solution Kft.",
                 "description": "Currently focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
-                "duration": "Jan 2024 - Present",
+                "duration": "Jan 2024 - Jan 2026",
                 "skills": "Angular, Typescript, HTML, CSS"
             },
             "integrity": {

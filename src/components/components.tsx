@@ -868,6 +868,14 @@ export const WorksPage = () => {
 
     const projects = [
         {
+            title: t('catan.title'),
+            description: t('catan.description'),
+            image: "/works/catan.png",
+            status: t('catan.status'),
+            link: 'https://catan.rozsnorbert.hu',
+            technologies: ["Next.js", "MongoDB"]
+        },
+        {
             title: t('planit.title'),
             description: t('planit.description'),
             image: "/works/planit.png",
@@ -890,6 +898,14 @@ export const WorksPage = () => {
             status: t('clearbuild.status'),
             link: 'https://clearbuild.vercel.app',
             technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Node.js"]
+        },
+        {
+            title: t('gondolkodtato.title'),
+            description: t('gondolkodtato.description'),
+            image: "/works/gondolkodtato.png",
+            status: t('gondolkodtato.status'),
+            link: 'https://gondolkodtato.vercel.app',
+            technologies: ["Next.js", "MongoDB"]
         },
         {
             title: t('study.title'),
