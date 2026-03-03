@@ -329,7 +329,7 @@ export const Jobs = () => {
                             <p className="text-gray-500 text-sm">{t('proud.projects.description')}</p>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-green-400 mb-2">5+</div>
+                            <div className="text-3xl font-bold text-green-400 mb-2">{new Date().getFullYear() - 2020}+</div>
                             <p className="text-gray-300">{t('proud.years.title')}</p>
                             <p className="text-gray-500 text-sm">{t('proud.years.description')}</p>
                         </div>
