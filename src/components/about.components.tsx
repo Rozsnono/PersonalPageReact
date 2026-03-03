@@ -232,16 +232,6 @@ export const Jobs = () => {
 
     const jobs = [
         {
-            title: t('erp2u.title'),
-            company: t('erp2u.company'),
-            duration: t('erp2u.duration'),
-            description: t('erp2u.description'),
-            skills: t('erp2u.skills').split(', '),
-            color: 'red',
-            hex: '#ff4d4d',
-            direction: 'left'
-        },
-        {
             title: t('tiwala.title'),
             company: t('tiwala.company'),
             duration: t('tiwala.duration'),
