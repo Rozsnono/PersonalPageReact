@@ -527,20 +527,23 @@ export const Experience = () => {
         {
             title: t('tiwala'),
             company: "Tiwala Solution Kft.",
-            duration: "Jan 2024 - " + t('present'),
-            current: true
+            duration: "Jan 2024 - Jan 2026",
+            current: false,
+            color: 'blue',
         },
         {
             title: t('integrity'),
             company: "Integrity Kft.",
             duration: "Jan 2023 - Jan 2024",
-            current: false
+            current: false,
+            color: 'emerald',
         },
         {
             title: t('freelance'),
             company: "Freelance",
             duration: "Jun 2020 - " + t('present'),
-            current: true
+            current: true,
+            color: 'purple',
         }
     ];
 
@@ -565,16 +568,16 @@ export const Experience = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/30 rounded-2xl border border-gray-700 hover:border-emerald-500/50 transition-colors"
+                            className={`flex flex-col md:flex-row md:justify-between md:items-center p-6 bg-gray-800/30 rounded-2xl border border-gray-700 hover:border-${exp.color}-500/50 transition-colors`}
                         >
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
-                                <p className="text-emerald-400">{exp.company}</p>
+                                <p className={`text-${exp.color}-400`}>{exp.company}</p>
                             </div>
                             <div className="mt-4 md:mt-0 text-right">
                                 <p className="text-gray-400">{exp.duration}</p>
                                 {exp.current && (
-                                    <span className="inline-block mt-2 px-3 py-1 bg-green-600 text-xs rounded-full">
+                                    <span className={`inline-block mt-2 px-3 py-1 bg-${exp.color}-600 text-xs rounded-full`}>
                                         {t('current')}
                                     </span>
                                 )}
