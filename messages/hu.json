@@ -202,7 +202,7 @@
                 "company": "Integrity Kft.",
                 "description": "Ez a szerep formált igazán fejlesztővé. Komplett webes megoldásokat készítettem az adatbázistervezéstől a felhasználói felületig. Sokféle projekten dolgoztam, ami megtanított a skálázható architektúra és a tiszta kód fontosságára.",
                 "duration": "2022. január – 2023. december",
-                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js"
+                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js, Vue.js"
             },
             "freelance": {
                 "title": "Webfejlesztő",

@@ -186,14 +186,14 @@
             "erp2u": {
                 "title": "Junior Frontend Developer",
                 "company": "ERP2U Kft.",
-                "description": "Currently focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
-                "duration": "Jan 2026 - Present",
+                "description": "",
+                "duration": "Jan 2026 - Marc 2026",
                 "skills": "Angular, Typescript, HTML, CSS"
             },
             "tiwala": {
                 "title": "Frontend Developer",
                 "company": "Tiwala Solution Kft.",
-                "description": "Currently focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
+                "description": "Focused on developing modern, responsive web applications using cutting-edge frontend technologies. I work closely with design teams to bring creative visions to life while ensuring optimal user experience and performance.",
                 "duration": "Jan 2024 - Jan 2026",
                 "skills": "Angular, Typescript, HTML, CSS"
             },
@@ -202,7 +202,7 @@
                 "company": "Integrity Kft.",
                 "description": "This role really shaped me as a developer. I built complete web solutions from database design to user interfaces. Working on diverse projects taught me the importance of scalable architecture and clean code practices.",
                 "duration": "Jan 2022 - Dec 2023",
-                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js"
+                "skills": "Node.js, Express.js, MongoDB, Next.js, React.js, Vue.js"
             },
             "freelance": {
                 "title": "Freelance Web Developer",

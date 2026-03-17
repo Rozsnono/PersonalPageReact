@@ -103,7 +103,7 @@ export const Skills = () => {
                 { name: 'React', level: '95%', favorite: true },
                 { name: 'Next.js', level: '90%', favorite: true },
                 { name: 'Angular', level: '85%' },
-                { name: 'Vue.js', level: '60%' },
+                { name: 'Vue.js', level: '75%', favorite: true },
                 { name: 'TypeScript', level: '90%', favorite: true },
                 { name: 'JavaScript', level: '95%' },
                 { name: 'HTML5 & CSS3', level: '95%' }
