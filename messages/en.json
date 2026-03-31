@@ -91,6 +91,11 @@
     },
     "works": {
         "title": "My Works",
+        "lakasinfo": {
+            "title": "LakasInfo – Real Estate Information System",
+            "description": "A modern mobile application that helps manage and track meters. Easily add and organize properties and meters, and keep track of upcoming events and tasks.",
+            "status": "See for yourself"
+        },
         "catan": {
             "title": "Catan - Online Board Game",
             "description": "A modern, browser-based version of the classic board game Catan. Play with friends in a beautifully designed interface that captures the essence of the original game while adding new features for an enhanced gaming experience.",

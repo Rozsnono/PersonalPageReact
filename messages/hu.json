@@ -91,6 +91,11 @@
     },
     "works": {
         "title": "Munkáim",
+        "lakasinfo": {
+            "title": "LakasInfo – Ingatlan Információs Rendszer",
+            "description": "Egy modern mobilalkalmazás, amely segít az mérőórák kezelésében és nyomon követésében. Könnyen hozzáadhatod és rendszerezheted az ingatlanokat és mérőórákat, valamint nyomon követheted a közelgő eseményeket és feladatokat.",
+            "status": "Nézd meg magad"
+        }, 
         "catan": {
             "title": "Catan – Online Társasjáték",
             "description": "A klasszikus Catan társasjáték modern, böngészőalapú változata. Játssz a barátaiddal egy igényesen megtervezett felületen, amely megőrzi az eredeti játék hangulatát, miközben új funkciókkal teszi még élvezetesebbé a játékélményt.",

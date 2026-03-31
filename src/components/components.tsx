@@ -871,6 +871,14 @@ export const WorksPage = () => {
 
     const projects = [
         {
+            title: t('lakasinfo.title'),
+            description: t('lakasinfo.description'),
+            image: "/works/lakasinfo.png",
+            status: t('lakasinfo.status'),
+            link: 'https://lakasinfo.rozsnorbert.hu',
+            technologies: ["Next.js", "MongoDB"]
+        },
+        {
             title: t('catan.title'),
             description: t('catan.description'),
             image: "/works/catan.png",
