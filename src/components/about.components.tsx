@@ -119,6 +119,7 @@ export const Skills = () => {
                 { name: 'C#', level: '70%' },
                 { name: 'MongoDB', level: '90%', favorite: true },
                 { name: 'MySQL', level: '70%' },
+                { name: 'Java', level: '60%' },
                 { name: 'REST APIs', level: '90%' }
             ],
             color: 'green',
